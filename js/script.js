@@ -1,5 +1,10 @@
 // JavaScript for Finansskolen
 
+// Helper function to check if on mobile
+function isMobile() {
+    return window.innerWidth <= 768;
+}
+
 function toggleFaq(element) {
     element.classList.toggle('active');
 }
@@ -34,6 +39,8 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function initTilmeldingScroll() {
+    if (isMobile()) return; // Disable magnetic scroll on mobile
+
     const block2 = document.querySelector('.tilmelding-block-2');
     if (!block2) return;
 
@@ -102,6 +109,8 @@ function initTilmeldingScroll() {
 }
 
 function initOmosScroll() {
+    if (isMobile()) return; // Disable magnetic scroll on mobile
+
     const block2 = document.querySelector('.omos-block-2');
     const block3 = document.querySelector('.omos-block-3');
     if (!block2 || !block3) return;
@@ -171,6 +180,8 @@ function initOmosScroll() {
 }
 
 function initFaqScroll() {
+    if (isMobile()) return; // Disable magnetic scroll on mobile
+
     const block2 = document.querySelector('.faq-block-2');
     if (!block2) return;
 
@@ -239,6 +250,8 @@ function initFaqScroll() {
 }
 
 function initIndexScroll() {
+    if (isMobile()) return; // Disable magnetic scroll on mobile
+
     const block2 = document.querySelector('.index-page .block-2');
     const block3 = document.querySelector('.index-page .block-3');
     const block4 = document.querySelector('.index-page .block-4');
@@ -318,6 +331,8 @@ function initIndexScroll() {
 }
 
 function initHorizontalScroll() {
+    if (isMobile()) return; // Disable horizontal scroll on mobile
+
     let currentSlide = 0;
     const totalSlides = 4; // blocks 2-5
     let scrollAccumulator = 0;

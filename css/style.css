@@ -927,13 +927,24 @@ header nav a:hover {
 }
 
 .tilmeld-image {
-    max-width: 850px;
-    max-height: 850px;
+    max-width: 550px;
+    max-height: 550px;
     filter: grayscale(100%) brightness(1.2) contrast(0.95);
     position: relative;
     z-index: 5;
-    top: 10rem;
-    margin-left: 14rem;
+    top: -6rem;
+    margin-left: 6rem;
+}
+
+.tilmeld-papir-image {
+    max-width: 600px;
+    max-height: 600px;
+    filter: grayscale(100%) brightness(1.2) contrast(0.95);
+    position: absolute;
+    z-index: 3;
+    top: 50%;
+    left: 55%;
+    transform: translateY(-50%) rotate(-5deg);
 }
 
 .tilmelding-info {
@@ -1137,7 +1148,7 @@ header nav a:hover {
 }
 
 .faq-box {
-    background-color: #F35D60;
+    background-color: #1A1A1A;
     color: #fff;
     padding: 1.5rem;
     cursor: pointer;
@@ -1145,7 +1156,7 @@ header nav a:hover {
 }
 
 .faq-box:hover {
-    background-color: #d94a4d;
+    background-color: #2a2a2a;
 }
 
 .faq-box-header {
@@ -1192,4 +1203,395 @@ header nav a:hover {
     font-size: 0.85rem;
     line-height: 1.6;
     margin: 0;
+}
+
+/* ==================== */
+/* MOBILE RESPONSIVE    */
+/* ==================== */
+
+@media (max-width: 768px) {
+    /* Header */
+    header {
+        width: 100%;
+        padding: 1rem 1.5rem;
+        justify-content: center;
+    }
+
+    header nav {
+        gap: 1.5rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    header nav a {
+        font-size: 0.75rem;
+    }
+
+    /* Blocks - General */
+    .block {
+        padding: 4rem 1.5rem;
+        min-height: auto;
+    }
+
+    .index-page .block {
+        height: auto;
+        min-height: auto;
+    }
+
+    .block h2 {
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    /* Block 1 */
+    .block-1 {
+        flex-direction: column;
+        height: auto;
+        min-height: auto;
+        padding: 6rem 1.5rem 3rem 1.5rem;
+        align-items: center;
+    }
+
+    .block-1-title {
+        font-size: 2.5rem;
+    }
+
+    .title-container {
+        margin-left: 0;
+        margin-top: 0;
+        align-items: center;
+    }
+
+    /* Hide decorative elements on mobile */
+    .vertical-line,
+    .vertical-line-top,
+    .vertical-line-bottom,
+    .vertical-line-block-2,
+    .vertical-line-block-3,
+    .scrolling-text,
+    .background-box,
+    .title-mirrored {
+        display: none !important;
+    }
+
+    /* Images in block 1 */
+    .gemini-image,
+    .gemini-container {
+        max-width: 100%;
+        max-height: 400px;
+    }
+
+    .program-image {
+        max-width: 100%;
+        margin-top: 2rem;
+    }
+
+    /* Block 2 */
+    .block-2 {
+        flex-direction: column;
+        margin-top: 0;
+        min-height: auto;
+        padding: 3rem 1.5rem;
+    }
+
+    .block-2-content {
+        align-items: center;
+        margin-right: 0;
+        margin-top: 0;
+    }
+
+    .block-2-title-container {
+        align-items: center;
+    }
+
+    .block-2-title {
+        font-size: 2.5rem;
+    }
+
+    .block-2-description {
+        position: static;
+        transform: none;
+        max-width: 100%;
+        margin-top: 1.5rem;
+        text-align: center;
+    }
+
+    .block-2-description p {
+        text-align: center;
+    }
+
+    .index-page .block-2-content {
+        margin-top: 0;
+    }
+
+    .index-page .block-2-title-container {
+        margin-right: 0;
+    }
+
+    .index-page .block-2-description {
+        position: static;
+        transform: none;
+        right: auto;
+        top: auto;
+    }
+
+    .penge-image,
+    .seddel-image {
+        display: none;
+    }
+
+    /* Block 3 */
+    .block-3 {
+        min-height: auto;
+        padding: 3rem 1.5rem;
+    }
+
+    .block-3-content {
+        position: static;
+        align-items: center;
+        left: auto;
+        margin-top: 0;
+    }
+
+    .index-page .block-3-content {
+        position: static;
+        transform: none;
+        top: auto;
+        left: auto;
+    }
+
+    .block-3-title-container {
+        align-items: center;
+    }
+
+    .block-3-title {
+        font-size: 2.5rem;
+    }
+
+    .block-3-description {
+        text-align: center;
+        max-width: 100%;
+    }
+
+    .block-3-description p {
+        text-align: center;
+    }
+
+    .marie-image {
+        position: static;
+        max-width: 100%;
+        max-height: 350px;
+        margin-top: 2rem;
+    }
+
+    /* Block 4 */
+    .block-4 {
+        min-height: auto;
+        padding: 3rem 1.5rem;
+        flex-direction: column;
+    }
+
+    .block-4-content-left,
+    .block-4-content-right {
+        position: static;
+        align-items: center;
+        margin-top: 0;
+        margin-bottom: 3rem;
+    }
+
+    .block-4-title {
+        font-size: 2.5rem;
+    }
+
+    .block-4-title-right {
+        font-size: 2.5rem;
+    }
+
+    .block-4-description,
+    .block-4-description-right {
+        text-align: center;
+        max-width: 100%;
+    }
+
+    .block-4-description p,
+    .block-4-description-right p {
+        text-align: center;
+    }
+
+    .red-box-left,
+    .red-box-right,
+    .program-red-box-block-2,
+    .program-red-box-block-3 {
+        display: none;
+    }
+
+    /* Block 5 */
+    .block-5-title {
+        font-size: 2.5rem;
+    }
+
+    .block-5-description {
+        max-width: 100%;
+    }
+
+    /* Program Page */
+    .program-block-1 {
+        height: auto;
+    }
+
+    .program-title {
+        margin-left: 0;
+    }
+
+    .program-page .horizontal-scroll-container {
+        height: auto;
+        overflow: visible;
+    }
+
+    .program-page .horizontal-scroll-wrapper {
+        flex-direction: column;
+        height: auto;
+        transform: none !important;
+    }
+
+    .program-page .horizontal-scroll-container .block {
+        min-width: 100%;
+        width: 100%;
+        min-height: auto;
+        height: auto;
+    }
+
+    .program-page .block-3 .larry-image {
+        position: static;
+        max-width: 100%;
+        max-height: 350px;
+        margin-top: 2rem;
+    }
+
+    .program-page .block-4 .globus-image {
+        position: static;
+        max-width: 100%;
+        max-height: 350px;
+        transform: none;
+        margin-top: 2rem;
+    }
+
+    .program-page .block-4 .block-4-description {
+        margin-top: 1.5rem;
+    }
+
+    /* Tilmelding Page */
+    .tilmelding-block-1 {
+        height: auto;
+    }
+
+    .tilmelding-title {
+        margin-left: 0;
+    }
+
+    .tilmeld-image {
+        max-width: 100%;
+        max-height: 350px;
+        top: 0;
+        margin-left: 0;
+        margin-top: 2rem;
+    }
+
+    .tilmeld-papir-image {
+        display: none;
+    }
+
+    .tilmelding-block-2 {
+        flex-direction: column;
+        padding: 3rem 1.5rem;
+    }
+
+    .tilmelding-info {
+        max-width: 100%;
+        align-items: center;
+        margin-bottom: 2rem;
+    }
+
+    .tilmelding-form-title-container {
+        align-items: center;
+    }
+
+    .tilmelding-description {
+        text-align: center;
+        max-width: 100%;
+    }
+
+    .tilmelding-description p {
+        text-align: center;
+    }
+
+    .tilmelding-form-container {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .tilmelding-form {
+        max-width: 100%;
+    }
+
+    /* Om Os Page */
+    .omos-block-1 {
+        height: auto;
+    }
+
+    .omos-title {
+        margin-left: 0;
+    }
+
+    .omos-block-2,
+    .omos-block-3 {
+        padding: 3rem 1.5rem;
+    }
+
+    .omos-section {
+        align-items: center;
+    }
+
+    .omos-description {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .omos-description p {
+        text-align: center;
+    }
+
+    /* FAQ Page */
+    .faq-block-1 {
+        height: auto;
+    }
+
+    .faq-title {
+        margin-left: 0;
+    }
+
+    .faq-image {
+        max-width: 100%;
+        max-height: 350px;
+        top: 0;
+        transform: none;
+        margin-top: 2rem;
+    }
+
+    .faq-block-2 {
+        padding: 3rem 1.5rem;
+    }
+
+    .faq-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .faq-box {
+        padding: 1.25rem;
+    }
+
+    .faq-box-header h2 {
+        font-size: 1rem;
+    }
 }
