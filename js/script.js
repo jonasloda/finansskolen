@@ -17,6 +17,11 @@ document.addEventListener('DOMContentLoaded', function() {
         initHorizontalScroll();
     }
 
+    // Random color hover for FAQ page footer
+    if (document.body.classList.contains('faq-page')) {
+        initFaqFooterHover();
+    }
+
     // Magnetic scroll for tilmelding page
     if (document.body.classList.contains('tilmelding-page')) {
         initTilmeldingScroll();
@@ -42,86 +47,16 @@ function initTilmeldingScroll() {
     if (isMobile()) return; // Disable magnetic scroll on mobile
 
     const block2 = document.querySelector('.tilmelding-block-2');
-    if (!block2) return;
+    const footer = document.querySelector('.site-footer');
+    if (!block2 || !footer) return;
 
-    // State: 0 = viewing block 1, 1 = viewing block 2
+    // State: 0 = viewing block 1, 1 = viewing block 2, 2 = footer
     let currentView = 0;
     let isAnimating = false;
     let scrollAccumulator = 0;
     let lastScrollTime = 0;
 
-    const snapPoint = block2.offsetTop;
-    const threshold = 80;
-
-    // Ensure we start at top
-    window.scrollTo(0, 0);
-
-    function animateTo(targetY) {
-        isAnimating = true;
-        const startY = window.scrollY;
-        const diff = targetY - startY;
-        const duration = 500;
-        const startTime = performance.now();
-
-        function step(currentTime) {
-            const elapsed = currentTime - startTime;
-            const progress = Math.min(elapsed / duration, 1);
-            const eased = 1 - Math.pow(1 - progress, 3);
-
-            window.scrollTo(0, startY + diff * eased);
-
-            if (progress < 1) {
-                requestAnimationFrame(step);
-            } else {
-                isAnimating = false;
-            }
-        }
-
-        requestAnimationFrame(step);
-    }
-
-    // Take complete control of scrolling
-    window.addEventListener('wheel', function(e) {
-        e.preventDefault();
-
-        if (isAnimating) return;
-
-        const currentTime = Date.now();
-        if (currentTime - lastScrollTime > 200) {
-            scrollAccumulator = 0;
-        }
-        lastScrollTime = currentTime;
-        scrollAccumulator += e.deltaY;
-
-        if (Math.abs(scrollAccumulator) > threshold) {
-            if (scrollAccumulator > 0 && currentView === 0) {
-                // Scroll down: block 1 -> block 2
-                currentView = 1;
-                animateTo(snapPoint);
-            } else if (scrollAccumulator < 0 && currentView === 1) {
-                // Scroll up: block 2 -> block 1
-                currentView = 0;
-                animateTo(0);
-            }
-            scrollAccumulator = 0;
-        }
-    }, { passive: false });
-}
-
-function initOmosScroll() {
-    if (isMobile()) return; // Disable magnetic scroll on mobile
-
-    const block2 = document.querySelector('.omos-block-2');
-    const block3 = document.querySelector('.omos-block-3');
-    if (!block2 || !block3) return;
-
-    // State: 0 = viewing block 1, 1 = viewing block 2, 2 = viewing block 3
-    let currentView = 0;
-    let isAnimating = false;
-    let scrollAccumulator = 0;
-    let lastScrollTime = 0;
-
-    const snapPoints = [0, block2.offsetTop, block3.offsetTop];
+    const snapPoints = [0, block2.offsetTop, footer.offsetTop];
     const threshold = 80;
 
     // Ensure we start at top
@@ -166,11 +101,11 @@ function initOmosScroll() {
 
         if (Math.abs(scrollAccumulator) > threshold) {
             if (scrollAccumulator > 0 && currentView < 2) {
-                // Scroll down: go to next block
+                // Scroll down: go to next section
                 currentView++;
                 animateTo(snapPoints[currentView]);
             } else if (scrollAccumulator < 0 && currentView > 0) {
-                // Scroll up: go to previous block
+                // Scroll up: go to previous section
                 currentView--;
                 animateTo(snapPoints[currentView]);
             }
@@ -179,19 +114,21 @@ function initOmosScroll() {
     }, { passive: false });
 }
 
-function initFaqScroll() {
+function initOmosScroll() {
     if (isMobile()) return; // Disable magnetic scroll on mobile
 
-    const block2 = document.querySelector('.faq-block-2');
-    if (!block2) return;
+    const block2 = document.querySelector('.omos-block-2');
+    const block3 = document.querySelector('.omos-block-3');
+    const footer = document.querySelector('.site-footer');
+    if (!block2 || !block3 || !footer) return;
 
-    // State: 0 = viewing block 1, 1 = viewing block 2
+    // State: 0 = viewing block 1, 1 = viewing block 2, 2 = viewing block 3, 3 = footer
     let currentView = 0;
     let isAnimating = false;
     let scrollAccumulator = 0;
     let lastScrollTime = 0;
 
-    const snapPoint = block2.offsetTop;
+    const snapPoints = [0, block2.offsetTop, block3.offsetTop, footer.offsetTop];
     const threshold = 80;
 
     // Ensure we start at top
@@ -235,14 +172,85 @@ function initFaqScroll() {
         scrollAccumulator += e.deltaY;
 
         if (Math.abs(scrollAccumulator) > threshold) {
-            if (scrollAccumulator > 0 && currentView === 0) {
-                // Scroll down: block 1 -> block 2
-                currentView = 1;
-                animateTo(snapPoint);
-            } else if (scrollAccumulator < 0 && currentView === 1) {
-                // Scroll up: block 2 -> block 1
-                currentView = 0;
-                animateTo(0);
+            if (scrollAccumulator > 0 && currentView < 3) {
+                // Scroll down: go to next block
+                currentView++;
+                animateTo(snapPoints[currentView]);
+            } else if (scrollAccumulator < 0 && currentView > 0) {
+                // Scroll up: go to previous block
+                currentView--;
+                animateTo(snapPoints[currentView]);
+            }
+            scrollAccumulator = 0;
+        }
+    }, { passive: false });
+}
+
+function initFaqScroll() {
+    if (isMobile()) return; // Disable magnetic scroll on mobile
+
+    const block2 = document.querySelector('.faq-block-2');
+    const footer = document.querySelector('.site-footer');
+    if (!block2 || !footer) return;
+
+    // State: 0 = viewing block 1, 1 = viewing block 2, 2 = footer
+    let currentView = 0;
+    let isAnimating = false;
+    let scrollAccumulator = 0;
+    let lastScrollTime = 0;
+
+    const snapPoints = [0, block2.offsetTop, footer.offsetTop];
+    const threshold = 80;
+
+    // Ensure we start at top
+    window.scrollTo(0, 0);
+
+    function animateTo(targetY) {
+        isAnimating = true;
+        const startY = window.scrollY;
+        const diff = targetY - startY;
+        const duration = 500;
+        const startTime = performance.now();
+
+        function step(currentTime) {
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            const eased = 1 - Math.pow(1 - progress, 3);
+
+            window.scrollTo(0, startY + diff * eased);
+
+            if (progress < 1) {
+                requestAnimationFrame(step);
+            } else {
+                isAnimating = false;
+            }
+        }
+
+        requestAnimationFrame(step);
+    }
+
+    // Take complete control of scrolling
+    window.addEventListener('wheel', function(e) {
+        e.preventDefault();
+
+        if (isAnimating) return;
+
+        const currentTime = Date.now();
+        if (currentTime - lastScrollTime > 200) {
+            scrollAccumulator = 0;
+        }
+        lastScrollTime = currentTime;
+        scrollAccumulator += e.deltaY;
+
+        if (Math.abs(scrollAccumulator) > threshold) {
+            if (scrollAccumulator > 0 && currentView < 2) {
+                // Scroll down: go to next section
+                currentView++;
+                animateTo(snapPoints[currentView]);
+            } else if (scrollAccumulator < 0 && currentView > 0) {
+                // Scroll up: go to previous section
+                currentView--;
+                animateTo(snapPoints[currentView]);
             }
             scrollAccumulator = 0;
         }
@@ -253,19 +261,19 @@ function initIndexScroll() {
     if (isMobile()) return; // Disable magnetic scroll on mobile
 
     const block2 = document.querySelector('.index-page .block-2');
-    const block3 = document.querySelector('.index-page .block-3');
+    const block3Hvor = document.querySelector('.index-page .block-3-hvor');
     const block4 = document.querySelector('.index-page .block-4');
-    const block5 = document.querySelector('.index-page .block-5');
-    if (!block2 || !block3 || !block4 || !block5) return;
+    const footer = document.querySelector('.site-footer');
+    if (!block2 || !block3Hvor || !block4 || !footer) return;
 
-    // State: 0 = viewing block 1, 1 = viewing block 2, etc.
+    // State: 0 = viewing block 1, 1 = viewing block 2, etc., 4 = footer
     let currentView = 0;
     let isAnimating = false;
     let scrollAccumulator = 0;
     let lastScrollTime = 0;
     let canScroll = true;
 
-    const snapPoints = [0, block2.offsetTop, block3.offsetTop, block4.offsetTop, block5.offsetTop];
+    const snapPoints = [0, block2.offsetTop, block3Hvor.offsetTop, block4.offsetTop, footer.offsetTop];
     const threshold = 80;
 
     // Ensure we start at top
@@ -310,7 +318,7 @@ function initIndexScroll() {
 
         if (Math.abs(scrollAccumulator) > threshold) {
             if (scrollAccumulator > 0 && currentView < 4) {
-                // Scroll down: go to next block
+                // Scroll down: go to next block (including footer)
                 currentView++;
                 animateTo(snapPoints[currentView]);
                 scrollAccumulator = 0;
@@ -334,7 +342,7 @@ function initHorizontalScroll() {
     if (isMobile()) return; // Disable horizontal scroll on mobile
 
     let currentSlide = 0;
-    const totalSlides = 4; // blocks 2-5
+    const totalSlides = 5; // blocks 2-5 (4 kursusgange + skal du med)
     let scrollAccumulator = 0;
     let lastScrollTime = 0;
     let touchStartX = 0;
@@ -461,6 +469,40 @@ function initHorizontalScroll() {
         requestAnimationFrame(() => {
             const translateX = -currentSlide * 100;
             wrapper.style.transform = `translateX(${translateX}vw)`;
+        });
+    }
+}
+
+function initFaqFooterHover() {
+    // Site-wide page accent colors
+    const faqColors = ['#F35D60', '#F3F35D', '#5D80F3', '#92F35D', '#4ADE80', '#F35D8D', '#E8DCC8'];
+    const footer = document.querySelector('.site-footer');
+    if (!footer) return;
+
+    // Select all links except the main button
+    const links = footer.querySelectorAll('a:not(.footer-button)');
+
+    links.forEach(link => {
+        link.addEventListener('mouseenter', function() {
+            const randomColor = faqColors[Math.floor(Math.random() * faqColors.length)];
+            this.style.color = randomColor;
+        });
+
+        link.addEventListener('mouseleave', function() {
+            this.style.color = '';
+        });
+    });
+
+    // Random background color for the main button
+    const button = footer.querySelector('.footer-button');
+    if (button) {
+        button.addEventListener('mouseenter', function() {
+            const randomColor = faqColors[Math.floor(Math.random() * faqColors.length)];
+            this.style.backgroundColor = randomColor;
+        });
+
+        button.addEventListener('mouseleave', function() {
+            this.style.backgroundColor = '';
         });
     }
 }

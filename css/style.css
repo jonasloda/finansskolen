@@ -94,16 +94,42 @@ header nav a:hover {
 }
 
 .index-page .block-2-content {
-    margin-top: -3rem;
+    margin-top: -4rem;
 }
 
 .index-page .block-2-title-container {
-    margin-right: 9.1rem;
+    margin-right: 15rem;
 }
 
 .index-page .block-2-description {
-    top: calc(50% - 2rem);
-    right: calc(24.5rem - 280px + 3rem);
+    top: calc(50% - 5.5rem);
+    right: calc(24.5rem - 500px + 10.5rem);
+    max-width: 500px;
+}
+
+.index-page .block-2-button {
+    position: absolute;
+    top: calc(50% + 8rem);
+    right: 35rem;
+    transform: translateX(100%);
+    background-color: #1A1A1A;
+    color: #F3F35D;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    z-index: 50;
+    transition: background-color 0.2s;
+}
+
+.index-page .block-2-button:hover {
+    background-color: #333;
+}
+
+.index-page .block-3 {
+    background-color: #1A1A1A;
+    color: #F3F35D;
 }
 
 .index-page .block-3-content {
@@ -112,13 +138,69 @@ header nav a:hover {
     left: 8rem;
 }
 
+.index-page .block-3 .block-3-title {
+    color: #F3F35D;
+}
+
+.index-page .block-3 .block-3-description p {
+    color: #fff;
+}
+
 .index-page .marie-image {
-    top: 5%;
+    top: 2.5%;
+    max-width: 850px;
+    max-height: 850px;
 }
 
 .index-page .block-3-description {
-    margin-top: 1rem;
+    margin-top: 2rem;
     max-width: 350px;
+}
+
+.index-page .block-3-description a {
+    color: #F3F35D;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 0.5rem;
+}
+
+.index-page .block-3-description a:hover {
+    text-decoration: underline;
+}
+
+.index-page .block-1 .vertical-line {
+    background-color: #1A1A1A;
+}
+
+.index-page .block-1 .scrolling-text {
+    color: #1A1A1A;
+}
+
+.index-page .block-1 .block-1-title {
+    color: #1A1A1A;
+}
+
+.index-page .block-1 {
+    background-color: #F3F35D;
+}
+
+.index-page .block-1::before {
+    background-color: #F3F35D;
+}
+
+.index-page .block-1 .background-box {
+    background-color: #F3F35D;
+}
+
+.index-page header {
+    background-color: #F3F35D;
+    color: #1A1A1A;
+}
+
+.index-page header nav a {
+    color: #1A1A1A;
 }
 
 .block h2 {
@@ -224,11 +306,16 @@ header nav a:hover {
 }
 
 .program-page .block-2 .block-2-title {
-    color: #fff;
+    color: #F35D8D;
 }
 
 .program-page .block-2 .block-2-description p {
     color: #fff;
+}
+
+.program-page .block-2 .block-2-description a,
+.program-page .block-2 .block-2-description strong {
+    color: #F35D8D;
 }
 
 .program-page .block-2 .penge-image {
@@ -264,7 +351,7 @@ header nav a:hover {
 }
 
 .program-page .block-3 .block-2-title {
-    color: #fff;
+    color: #F35D8D;
 }
 
 .program-page .block-3 .block-2-description p {
@@ -299,29 +386,41 @@ header nav a:hover {
     max-width: 450px;
 }
 
-.program-red-box-block-3 {
-    position: absolute;
-    background-color: #F35D60;
-    width: 500px;
-    height: 120px;
-    top: 6rem;
-    right: 2rem;
-    z-index: 1;
-}
-
+.program-red-box-block-3,
 .program-red-box-block-2 {
-    position: absolute;
-    background-color: #F35D60;
-    width: 500px;
-    height: 120px;
-    top: 6rem;
-    right: 2rem;
-    z-index: 1;
+    display: none;
 }
 
 .program-page .block-2-title-container {
     position: relative;
     z-index: 2;
+}
+
+.program-page .block-2 .block-2-description {
+    margin-top: 1rem;
+}
+
+.program-page .block-3 .block-2-description {
+    margin-top: 1rem;
+}
+
+.program-page .block-2-description a,
+.program-page .block-4-description a {
+    color: #F35D8D;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.program-page .block-2-description strong,
+.program-page .block-4-description strong {
+    color: #F35D8D;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+}
+
+.program-page .block-4-content-left {
+    margin-top: 2rem;
 }
 
 .block-1-title {
@@ -421,7 +520,7 @@ header nav a:hover {
 .penge-image {
     max-width: 600px;
     max-height: 600px;
-    filter: grayscale(100%) contrast(1.1);
+    filter: grayscale(100%) contrast(1.4);
     position: relative;
     z-index: 5;
     margin-right: auto;
@@ -438,8 +537,8 @@ header nav a:hover {
 }
 
 .block-3 {
-    background-color: #1A1A1A;
-    color: #fff;
+    background-color: #F3F35D;
+    color: #1A1A1A;
     position: relative;
     min-height: 900px;
 }
@@ -517,7 +616,7 @@ header nav a:hover {
 
 .red-box-left {
     position: absolute;
-    background-color: #F35D60;
+    background-color: #F3F35D;
     width: 350px;
     height: 120px;
     top: 2rem;
@@ -565,7 +664,7 @@ header nav a:hover {
 
 .red-box-right {
     position: absolute;
-    background-color: #F35D60;
+    background-color: #F3F35D;
     width: 250px;
     height: 120px;
     top: 2rem;
@@ -600,6 +699,76 @@ header nav a:hover {
     line-height: 1.6;
     margin-bottom: 1rem;
     text-align: left;
+}
+
+/* Block 4 - Vil du med? (Index page) */
+.index-page .block-4-vildumed {
+    background-color: #F3F35D;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem;
+}
+
+.index-page .block-4-vildumed .block-4-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 600px;
+    margin-top: -10rem;
+}
+
+.index-page .block-4-vildumed .block-4-title-container {
+    margin-bottom: 0.25rem;
+}
+
+.index-page .block-4-vildumed .block-4-title {
+    color: #1A1A1A;
+}
+
+.index-page .block-4-vildumed .block-4-description {
+    max-width: 100%;
+    text-align: center;
+}
+
+.index-page .block-4-vildumed .block-4-description p {
+    text-align: left;
+}
+
+.index-page .block-4-vildumed .block-4-description strong {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+}
+
+.index-page .block-4-vildumed .block-4-description ul {
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+    text-align: left;
+}
+
+.index-page .block-4-vildumed .block-4-description li {
+    margin-bottom: 0.5rem;
+}
+
+.index-page .block-4-vildumed .block-4-button {
+    display: inline-block;
+    background-color: #1A1A1A;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 1rem 2rem;
+    margin-top: 1.5rem;
+    transition: background-color 0.2s;
+}
+
+.index-page .block-4-vildumed .block-4-button:hover {
+    background-color: #333;
 }
 
 .block-5 {
@@ -706,11 +875,29 @@ header nav a:hover {
 }
 
 .program-page .block-4 .red-box-left {
-    width: 500px;
+    display: none;
 }
 
 .program-page .block-4 .block-4-description {
-    margin-top: 5rem;
+    margin-top: 1rem;
+}
+
+.program-page .block-4 {
+    background-color: #1A1A1A;
+    color: #fff;
+}
+
+.program-page .block-4 .block-4-title {
+    color: #F35D8D;
+}
+
+.program-page .block-4 .block-4-description p {
+    color: #fff;
+}
+
+.program-page .block-4 .block-4-description a,
+.program-page .block-4 .block-4-description strong {
+    color: #F35D8D;
 }
 
 .program-page .block-4 .globus-image {
@@ -793,26 +980,26 @@ header nav a:hover {
 
 /* Tilmelding Page Styles */
 .tilmelding-page header {
-    background-color: #F35D60;
-    color: #fff;
+    background-color: #92F35D;
+    color: #1A1A1A;
 }
 
 .tilmelding-page header nav a {
-    color: #fff;
+    color: #1A1A1A;
 }
 
 .tilmelding-block-1 {
-    background-color: #F35D60;
-    color: #fff;
+    background-color: #92F35D;
+    color: #1A1A1A;
     height: 850px;
 }
 
 .tilmelding-block-1::before {
-    background-color: #F35D60;
+    background-color: #92F35D;
 }
 
 .tilmelding-block-1 .vertical-line {
-    background-color: #fff;
+    background-color: #1A1A1A;
 }
 
 .tilmelding-block-1 .vertical-line-top {
@@ -825,11 +1012,11 @@ header nav a:hover {
 }
 
 .tilmelding-block-1 .scrolling-text {
-    color: #fff;
+    color: #1A1A1A;
 }
 
 .tilmelding-block-1 .background-box {
-    background-color: #F35D60;
+    background-color: #92F35D;
     top: 23.5%;
 }
 
@@ -901,7 +1088,7 @@ header nav a:hover {
 
 .form-group input:focus,
 .form-group textarea:focus {
-    border-color: #F35D60;
+    border-color: #92F35D;
 }
 
 .form-group textarea {
@@ -923,7 +1110,7 @@ header nav a:hover {
 }
 
 .tilmelding-submit:hover {
-    background-color: #F35D60;
+    background-color: #92F35D;
 }
 
 .tilmeld-image {
@@ -970,26 +1157,27 @@ header nav a:hover {
 
 /* Om Os Page Styles */
 .omos-page header {
-    background-color: #1A1A1A;
-    color: #fff;
+    background-color: #5D80F3;
+    color: #1A1A1A;
 }
 
 .omos-page header nav a {
-    color: #fff;
+    color: #1A1A1A;
 }
 
 .omos-block-1 {
-    background-color: #1A1A1A;
-    color: #fff;
+    background-color: #5D80F3;
+    color: #1A1A1A;
     height: 850px;
+    position: relative;
 }
 
 .omos-block-1::before {
-    background-color: #1A1A1A;
+    background-color: #5D80F3;
 }
 
 .omos-block-1 .vertical-line {
-    background-color: #fff;
+    background-color: #1A1A1A;
 }
 
 .omos-block-1 .vertical-line-top {
@@ -1002,16 +1190,27 @@ header nav a:hover {
 }
 
 .omos-block-1 .scrolling-text {
-    color: #fff;
+    color: #1A1A1A;
 }
 
 .omos-block-1 .background-box {
-    background-color: #1A1A1A;
+    background-color: #5D80F3;
     top: 23.5%;
 }
 
 .omos-title {
     margin-left: 15.5rem;
+}
+
+.omos-page .marie-image {
+    position: absolute;
+    left: auto !important;
+    right: 2rem !important;
+    top: 3%;
+    max-width: 950px;
+    max-height: 950px;
+    filter: grayscale(100%) contrast(1.1) brightness(1.4);
+    z-index: 5;
 }
 
 .omos-block-2 {
@@ -1057,7 +1256,7 @@ header nav a:hover {
 
 .omos-block-3 {
     background-color: #1A1A1A;
-    color: #fff;
+    color: #5D80F3;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
@@ -1066,11 +1265,69 @@ header nav a:hover {
 }
 
 .omos-block-3 .block-2-title {
-    color: #fff;
+    color: #5D80F3;
 }
 
 .omos-block-3 .omos-description p {
     color: #fff;
+}
+
+.omos-block-3 .megafon-image {
+    display: none;
+}
+
+.omos-block-3 {
+    align-items: center;
+}
+
+.omos-block-3 .omos-content {
+    align-items: center;
+}
+
+.omos-block-3 .omos-section {
+    width: 600px;
+    align-items: flex-start;
+}
+
+.omos-block-3 .omos-description {
+    text-align: left;
+}
+
+.omos-block-3 .omos-description p {
+    text-align: left;
+}
+
+.omos-block-2 .mont-image {
+    position: absolute;
+    right: 8rem;
+    top: 45%;
+    transform: translateY(-50%) rotate(-10deg);
+    width: 375px;
+    filter: grayscale(100%) contrast(1.3);
+}
+
+.omos-block-2 .omos-content,
+.omos-block-3 .omos-content {
+    margin-top: -5rem;
+}
+
+.omos-description {
+    text-align: left;
+}
+
+.omos-link {
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 1rem 2rem;
+    background-color: #1A1A1A;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    transition: background-color 0.2s;
+}
+
+.omos-link:hover {
+    background-color: #2A2A2A;
 }
 
 /* FAQ Page Styles */
@@ -1203,6 +1460,73 @@ header nav a:hover {
     font-size: 0.85rem;
     line-height: 1.6;
     margin: 0;
+}
+
+/* FAQ Box Color Variants */
+.faq-box-dark {
+    background-color: #1A1A1A;
+    color: #fff;
+}
+
+.faq-box-dark:hover {
+    background-color: #2a2a2a;
+}
+
+.faq-box-pink {
+    background-color: #F35D8D;
+    color: #fff;
+}
+
+.faq-box-pink:hover {
+    background-color: #e04d7d;
+}
+
+.faq-box-purple {
+    background-color: #5D80F3;
+    color: #fff;
+}
+
+.faq-box-purple:hover {
+    background-color: #4a70e8;
+}
+
+.faq-box-yellow {
+    background-color: #F3F35D;
+    color: #1A1A1A;
+}
+
+.faq-box-yellow:hover {
+    background-color: #e6e650;
+}
+
+.faq-box-yellow .faq-box-answer a {
+    color: #1A1A1A;
+}
+
+.faq-box-green {
+    background-color: #92F35D;
+    color: #1A1A1A;
+}
+
+.faq-box-green:hover {
+    background-color: #82e34d;
+}
+
+.faq-box-green .faq-box-answer a {
+    color: #1A1A1A;
+}
+
+.faq-box-beige {
+    background-color: #E8DCC8;
+    color: #1A1A1A;
+}
+
+.faq-box-beige:hover {
+    background-color: #ddd0b8;
+}
+
+.faq-box-beige .faq-box-answer a {
+    color: #1A1A1A;
 }
 
 /* ==================== */
@@ -1548,6 +1872,11 @@ header nav a:hover {
         padding: 3rem 1.5rem;
     }
 
+    .omos-block-2 .mont-image,
+    .omos-block-3 .megafon-image {
+        display: none;
+    }
+
     .omos-section {
         align-items: center;
     }
@@ -1594,4 +1923,297 @@ header nav a:hover {
     .faq-box-header h2 {
         font-size: 1rem;
     }
+}
+
+/* Footer */
+.site-footer {
+    background-color: #1A1A1A;
+    color: #fff;
+    padding: 4rem 5rem 3rem 5rem;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #333;
+}
+
+.footer-cta .footer-button {
+    display: inline-block;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #1A1A1A;
+    background-color: #F3F35D;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    transition: background-color 0.2s;
+}
+
+.footer-cta .footer-button:hover {
+    background-color: #fff;
+}
+
+.footer-samarbejd a {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 0.9rem;
+    color: #F3F35D;
+    text-decoration: none;
+}
+
+.footer-samarbejd a:hover {
+    text-decoration: underline;
+}
+
+.footer-main {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 3rem;
+}
+
+.footer-section h4 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: #888;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.footer-section a {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 0.9rem;
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.footer-section a:hover {
+    color: #F3F35D;
+}
+
+.footer-section .footer-logo {
+    max-height: 40px;
+    margin-bottom: 0.5rem;
+    filter: brightness(0) invert(1);
+}
+
+.footer-logos {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.footer-logos a {
+    display: inline-block;
+    margin-bottom: 0;
+}
+
+.footer-logos img {
+    max-height: 35px;
+    filter: brightness(0) invert(1);
+    opacity: 0.8;
+    transition: opacity 0.2s;
+}
+
+.footer-logos a:hover img {
+    opacity: 1;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 2rem;
+    border-top: 1px solid #333;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.footer-links a {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 0.85rem;
+    color: #888;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    color: #F3F35D;
+}
+
+.footer-contact a {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 0.9rem;
+    color: #F3F35D;
+    text-decoration: none;
+}
+
+.footer-contact a:hover {
+    text-decoration: underline;
+}
+
+/* Footer Mobile */
+@media (max-width: 768px) {
+    .site-footer {
+        padding: 3rem 1.5rem 2rem 1.5rem;
+    }
+
+    .footer-top {
+        flex-direction: column;
+        gap: 1.5rem;
+        align-items: flex-start;
+    }
+
+    .footer-main {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 1.5rem;
+        align-items: flex-start;
+    }
+}
+
+/* Footer Page-Specific Colors */
+/* Om os page - Blue */
+.omos-page .footer-cta .footer-button {
+    background-color: #5D80F3;
+}
+.omos-page .footer-cta .footer-button:hover {
+    background-color: #7a99f5;
+}
+.omos-page .footer-samarbejd a,
+.omos-page .footer-contact a {
+    color: #5D80F3;
+}
+.omos-page .footer-section a:hover,
+.omos-page .footer-links a:hover {
+    color: #5D80F3;
+}
+
+/* Tilmelding page - Green */
+.tilmelding-page .footer-cta .footer-button {
+    background-color: #92F35D;
+}
+.tilmelding-page .footer-cta .footer-button:hover {
+    background-color: #a8f57d;
+}
+.tilmelding-page .footer-samarbejd a,
+.tilmelding-page .footer-contact a {
+    color: #92F35D;
+}
+.tilmelding-page .footer-section a:hover,
+.tilmelding-page .footer-links a:hover {
+    color: #92F35D;
+}
+
+/* FAQ page - White text with random colorful hovers */
+.faq-page .footer-cta .footer-button {
+    background-color: #fff;
+    color: #1A1A1A;
+    transition: background-color 0.2s;
+}
+.faq-page .footer-cta .footer-button:hover {
+    color: #fff;
+}
+.faq-page .footer-samarbejd a,
+.faq-page .footer-contact a,
+.faq-page .footer-section a,
+.faq-page .footer-links a {
+    color: #fff;
+    transition: color 0.2s;
+}
+.faq-page .footer-section h4 {
+    color: #fff;
+}
+
+/* Program page - Green */
+.program-page .footer-cta .footer-button {
+    background-color: #4ADE80;
+}
+.program-page .footer-cta .footer-button:hover {
+    background-color: #6be69a;
+}
+.program-page .footer-samarbejd a,
+.program-page .footer-contact a {
+    color: #4ADE80;
+}
+.program-page .footer-section a:hover,
+.program-page .footer-links a:hover {
+    color: #4ADE80;
+}
+
+/* Smelte Penge Image - Index Block 3 */
+.index-page .smelte-penge-image {
+    position: absolute;
+    right: 4rem;
+    top: 10%;
+    max-width: 750px;
+    max-height: 750px;
+    filter: grayscale(100%) contrast(1.1);
+    z-index: 5;
+}
+
+/* Kalender Image - Block 3 Hvor */
+.index-page .kalender-image {
+    position: absolute;
+    right: 10rem;
+    top: 40%;
+    max-width: 320px;
+    max-height: 320px;
+    filter: grayscale(100%) contrast(1.1);
+    z-index: 1;
+}
+
+/* Kort Image - Block 3 Hvor */
+.index-page .kort-image {
+    position: absolute;
+    right: 4rem;
+    top: 20%;
+    max-width: 525px;
+    max-height: 525px;
+    filter: grayscale(100%) contrast(1.1);
+    z-index: 0;
+    transform: rotate(-30deg);
+}
+
+.index-page .block-3-hvor .block-3-content {
+    z-index: 10;
+}
+
+/* Program Link - Block 3 Hvor */
+.index-page .block-3-hvor .block-3-description {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.index-page .block-3-hvor .program-link {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #1A1A1A;
+    background-color: #F3F35D;
+    text-decoration: none;
+    display: inline-block;
+    padding: 1rem 2rem;
+    margin-top: 1.5rem;
+    transition: background-color 0.2s;
+}
+
+.index-page .block-3-hvor .program-link:hover {
+    background-color: #fff;
 }
