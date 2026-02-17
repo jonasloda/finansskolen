@@ -69,6 +69,7 @@ header nav a:hover {
 
 /* Blocks */
 .block {
+    position: relative;
     padding: 7.5rem 5rem;
     text-align: center;
     min-height: 750px;
@@ -76,6 +77,32 @@ header nav a:hover {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.scroll-arrow {
+    position: absolute;
+    bottom: 12rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 3.5rem;
+    color: #1A1A1A;
+    opacity: 0.85;
+    animation: bounce 2s ease infinite;
+    z-index: 20;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    40% {
+        transform: translateX(-50%) translateY(-10px);
+    }
+    60% {
+        transform: translateX(-50%) translateY(-5px);
+    }
 }
 
 /* Index page blocks - fixed viewport height for magnetic scroll */
@@ -90,7 +117,10 @@ header nav a:hover {
 }
 
 .index-page .penge-image {
-    margin-top: -4rem;
+    margin-top: 1rem;
+    margin-left: 9rem;
+    max-width: 475px;
+    max-height: 475px;
 }
 
 .index-page .block-2-content {
@@ -154,7 +184,7 @@ header nav a:hover {
 
 .index-page .block-3-description {
     margin-top: 2rem;
-    max-width: 350px;
+    max-width: 500px;
 }
 
 .index-page .block-3-description a {
@@ -184,6 +214,7 @@ header nav a:hover {
 
 .index-page .block-1 {
     background-color: #F3F35D;
+    padding-bottom: 4rem;
 }
 
 .index-page .block-1::before {
@@ -263,7 +294,7 @@ header nav a:hover {
 .program-block-1 {
     background-color: #E9E4DE;
     color: #1A1A1A;
-    height: 650px;
+    height: 850px;
 }
 
 .program-block-1::before {
@@ -275,11 +306,12 @@ header nav a:hover {
 }
 
 .program-block-1 .vertical-line-top {
-    top: -1.75rem;
+    top: calc(-1rem - 2.4rem);
+    height: calc(21% - 2rem + 1rem + 2.4rem);
 }
 
 .program-block-1 .vertical-line-bottom {
-    height: calc(79% - 5rem);
+    height: calc(79% - 4.5rem);
 }
 
 .program-block-1 .scrolling-text {
@@ -297,7 +329,7 @@ header nav a:hover {
 
 .program-page .background-box {
     background-color: #E9E4DE;
-    top: 27%;
+    top: 23.5%;
 }
 
 .program-page .block-2 {
@@ -402,7 +434,7 @@ header nav a:hover {
 }
 
 .program-page .block-3 .block-2-description {
-    margin-top: 1rem;
+    margin-top: 2.5rem;
 }
 
 .program-page .block-2-description a,
@@ -499,6 +531,22 @@ header nav a:hover {
     margin: 0;
     line-height: 0.75;
     font-family: 'Roboto', sans-serif;
+}
+
+.program-page .block-2-description p.kursusgang-subtitle {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 1.3rem;
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+.program-page .block-4-description p.kursusgang-subtitle {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 1.3rem;
+    color: #F35D8D;
+    margin-bottom: 1rem;
 }
 
 .block-2-description {
@@ -599,6 +647,24 @@ header nav a:hover {
     text-align: left;
 }
 
+.block-3-dates {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    list-style-type: disc;
+    padding-left: 1.5rem;
+    text-align: left;
+}
+
+.index-page .block-3 .block-3-description .block-3-dates li {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    color: #F3F35D;
+    margin-bottom: 0.25rem;
+    line-height: 1.4;
+    font-size: 0.9rem;
+    font-variant-numeric: tabular-nums;
+}
+
 .block-4 {
     background-color: #E9E4DE;
     color: #1A1A1A;
@@ -654,6 +720,10 @@ header nav a:hover {
     text-align: left;
 }
 
+.block-4-description .price-text {
+    font-weight: 400;
+}
+
 .block-4-content-right {
     display: flex;
     flex-direction: column;
@@ -704,7 +774,7 @@ header nav a:hover {
 
 /* Block 4 - Vil du med? (Index page) */
 .index-page .block-4-vildumed {
-    background-color: #F3F35D;
+    background-color: #E9E4DE;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -715,7 +785,7 @@ header nav a:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 600px;
+    max-width: 480px;
     margin-top: -10rem;
 }
 
@@ -727,13 +797,17 @@ header nav a:hover {
     color: #1A1A1A;
 }
 
+.block-4-title .small-text {
+    font-size: 0.5em;
+}
+
 .index-page .block-4-vildumed .block-4-description {
     max-width: 100%;
     text-align: center;
 }
 
 .index-page .block-4-vildumed .block-4-description p {
-    text-align: left;
+    text-align: center;
 }
 
 .index-page .block-4-vildumed .block-4-description strong {
@@ -758,7 +832,7 @@ header nav a:hover {
 .index-page .block-4-vildumed .block-4-button {
     display: inline-block;
     background-color: #1A1A1A;
-    color: #fff;
+    color: #F3F35D;
     font-family: 'Roboto', sans-serif;
     font-size: 1.1rem;
     font-weight: 700;
@@ -927,6 +1001,66 @@ header nav a:hover {
     position: relative;
 }
 
+.program-intro-block {
+    background-color: #E9E4DE;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 4rem;
+}
+
+.intro-left {
+    flex: 1;
+    text-align: left;
+}
+
+.intro-right {
+    flex: 1;
+}
+
+.program-intro-block .block-2-description {
+    max-width: 400px;
+    position: static;
+    right: auto;
+    top: auto;
+    transform: none;
+}
+
+.program-intro-block .block-2-description p strong {
+    color: #F35D8D;
+}
+
+.teacher-grid {
+    display: flex;
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+.teacher-card {
+    flex: 1;
+    text-align: center;
+}
+
+.teacher-photo-placeholder {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background-color: #ccc;
+    margin: 0 auto 1rem;
+}
+
+.teacher-card p {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    margin-bottom: 0.25rem;
+}
+
+.teacher-card p strong {
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.9rem;
+}
+
 .program-block-5 {
     background-color: #E9E4DE;
     display: flex;
@@ -1039,11 +1173,74 @@ header nav a:hover {
 .tilmelding-block-2 {
     background-color: #E9E4DE;
     color: #1A1A1A;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
     min-height: 800px;
     padding: 3.5rem 8rem 7.5rem 8rem;
+}
+
+.tilmelding-block-2 .tilmelding-form-title-container {
+    margin-bottom: 2rem;
+    align-items: flex-start;
+    text-align: left;
+    max-width: 1000px;
+    width: 100%;
+}
+
+.tilmelding-columns {
+    display: flex;
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+.tilmelding-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2rem;
+    border: 2px solid #1A1A1A;
+    transition: background-color 0.2s;
+}
+
+.tilmelding-column:hover {
+    background-color: #92F35D;
+}
+
+h2.tilmelding-column-title {
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin: 0 0 0.75rem 0;
+    line-height: 1.2;
+}
+
+.tilmelding-column-description {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 3rem;
+    text-align: left;
+}
+
+.tilmelding-column-button {
+    display: inline-block;
+    background-color: #1A1A1A;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 1rem 2rem;
+    transition: background-color 0.2s;
+    margin-top: auto;
+}
+
+.tilmelding-column-button:hover {
+    background-color: #1A1A1A;
 }
 
 .tilmelding-form-container {
@@ -1179,7 +1376,7 @@ header nav a:hover {
 
 .omos-block-1 {
     background-color: #5D80F3;
-    color: #fff;
+    color: #1A1A1A;
     height: 850px;
     position: relative;
 }
@@ -1189,7 +1386,7 @@ header nav a:hover {
 }
 
 .omos-block-1 .vertical-line {
-    background-color: #fff;
+    background-color: #1A1A1A;
 }
 
 .omos-block-1 .vertical-line-top {
@@ -1202,7 +1399,7 @@ header nav a:hover {
 }
 
 .omos-block-1 .scrolling-text {
-    color: #fff;
+    color: #1A1A1A;
 }
 
 .omos-block-1 .background-box {
@@ -1214,6 +1411,16 @@ header nav a:hover {
     margin-left: 15.5rem;
 }
 
+.omos-page .omos-bg-image {
+    position: absolute;
+    right: -8rem;
+    top: 15rem;
+    max-width: 900px;
+    max-height: 900px;
+    filter: grayscale(100%) contrast(1.1) brightness(1.2);
+    z-index: 3;
+}
+
 .omos-page .marie-image {
     position: absolute;
     left: auto !important;
@@ -1221,7 +1428,7 @@ header nav a:hover {
     top: 5%;
     max-width: 800px;
     max-height: 800px;
-    filter: grayscale(100%) contrast(0.9) brightness(1.3);
+    filter: grayscale(100%) contrast(0.9) brightness(1.7) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' result='noise'/%3E%3CfeColorMatrix in='noise' type='saturate' values='0' result='monoNoise'/%3E%3CfeComponentTransfer in='monoNoise' result='fadedNoise'%3E%3CfeFuncA type='linear' slope='0.6'/%3E%3C/feComponentTransfer%3E%3CfeBlend in='SourceGraphic' in2='fadedNoise' mode='multiply' result='blend'/%3E%3CfeComposite in='blend' in2='SourceGraphic' operator='in'/%3E%3C/filter%3E%3C/svg%3E#grain");
     z-index: 5;
 }
 
@@ -1236,13 +1443,21 @@ header nav a:hover {
 }
 
 .omos-block-2 {
-    background-color: #E9E4DE;
-    color: #1A1A1A;
+    background-color: #1A1A1A;
+    color: #fff;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
     min-height: 800px;
     padding: 5rem 8rem 7.5rem 8rem;
+}
+
+.omos-block-2 .block-2-title {
+    color: #5D80F3;
+}
+
+.omos-block-2 .omos-description p {
+    color: #fff;
 }
 
 .omos-content {
@@ -1277,8 +1492,8 @@ header nav a:hover {
 }
 
 .omos-block-3 {
-    background-color: #1A1A1A;
-    color: #5D80F3;
+    background-color: #E9E4DE;
+    color: #1A1A1A;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
@@ -1287,27 +1502,31 @@ header nav a:hover {
 }
 
 .omos-block-3 .block-2-title {
-    color: #5D80F3;
+    color: #1A1A1A;
 }
 
 .omos-block-3 .omos-description p {
-    color: #fff;
+    color: #1A1A1A;
 }
 
 .omos-block-3 .megafon-image {
-    display: none;
+    position: absolute;
+    right: 8rem;
+    top: 45%;
+    transform: translateY(-50%) rotate(-5deg);
+    width: 375px;
+    filter: grayscale(100%) contrast(1.3) brightness(1.2) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='3' result='noise'/%3E%3CfeColorMatrix in='noise' type='saturate' values='0' result='monoNoise'/%3E%3CfeBlend in='SourceGraphic' in2='monoNoise' mode='multiply' result='blend'/%3E%3CfeComposite in='blend' in2='SourceGraphic' operator='in'/%3E%3C/filter%3E%3C/svg%3E#grain");
 }
 
 .omos-block-3 {
-    align-items: center;
+    align-items: flex-start;
 }
 
 .omos-block-3 .omos-content {
-    align-items: center;
+    align-items: flex-start;
 }
 
 .omos-block-3 .omos-section {
-    width: 600px;
     align-items: flex-start;
 }
 
@@ -1325,7 +1544,7 @@ header nav a:hover {
     top: 45%;
     transform: translateY(-50%) rotate(-10deg);
     width: 375px;
-    filter: grayscale(100%) contrast(1.3);
+    filter: grayscale(100%) contrast(1.3) brightness(1.2) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='3' result='noise'/%3E%3CfeColorMatrix in='noise' type='saturate' values='0' result='monoNoise'/%3E%3CfeBlend in='SourceGraphic' in2='monoNoise' mode='multiply' result='blend'/%3E%3CfeComposite in='blend' in2='SourceGraphic' operator='in'/%3E%3C/filter%3E%3C/svg%3E#grain");
 }
 
 .omos-block-2 .omos-content,
@@ -1350,6 +1569,111 @@ header nav a:hover {
 
 .omos-link:hover {
     background-color: #2A2A2A;
+}
+
+.omos-block-2 .omos-link {
+    background-color: #5D80F3;
+    color: #fff;
+}
+
+.omos-block-2 .omos-link:hover {
+    background-color: #4a6de0;
+}
+
+.omos-block-3 .omos-link {
+    background-color: #1A1A1A;
+    color: #fff;
+}
+
+.omos-block-3 .omos-link:hover {
+    background-color: #4a6de0;
+}
+
+/* Samarbejd Page Styles */
+.samarbejd-page header {
+    background-color: #E9E4DE;
+    color: #1A1A1A;
+}
+
+.samarbejd-page header nav a {
+    color: #1A1A1A;
+}
+
+.samarbejd-block-1 {
+    background-color: #E9E4DE;
+    color: #1A1A1A;
+    height: 850px;
+    position: relative;
+}
+
+.samarbejd-block-1::before {
+    background-color: #E9E4DE;
+}
+
+.samarbejd-block-1 .vertical-line {
+    background-color: #1A1A1A;
+}
+
+.samarbejd-block-1 .vertical-line-top {
+    top: calc(-1rem - 2.4rem);
+    height: calc(21% - 2rem + 1rem + 2.4rem);
+}
+
+.samarbejd-block-1 .vertical-line-bottom {
+    height: calc(79% - 4.5rem);
+}
+
+.samarbejd-block-1 .scrolling-text {
+    color: #1A1A1A;
+}
+
+.samarbejd-block-1 .background-box {
+    background-color: #E9E4DE;
+}
+
+.samarbejd-title {
+    margin-left: 3rem;
+}
+
+.samarbejd-block-3 {
+    background-color: #1A1A1A;
+    color: #fff;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    min-height: 800px;
+    padding: 5rem 8rem 7.5rem 8rem;
+}
+
+.samarbejd-block-3 .block-2-title {
+    color: #fff;
+}
+
+
+
+.samarbejd-block-3 .omos-description p {
+    color: #fff;
+}
+
+.samarbejd-block-4 {
+    background-color: #E9E4DE;
+    color: #1A1A1A;
+    min-height: 800px;
+    padding: 7.5rem 4rem 7.5rem 4rem;
+    justify-content: flex-start;
+}
+
+.samarbejd-block-4 .block-2-title {
+    color: #1A1A1A;
+}
+
+.samarbejd-block-4 .faq-contact-description p {
+    color: #1A1A1A;
+}
+
+.samarbejd-contact-form .tilmelding-submit {
+    background-color: #1A1A1A;
+    color: #fff;
 }
 
 /* FAQ Page Styles */
@@ -1395,7 +1719,11 @@ header nav a:hover {
 }
 
 .faq-title {
-    margin-left: 18rem;
+    margin-left: 3.4rem;
+}
+
+.faq-block-1 .scroll-arrow {
+    color: #fff;
 }
 
 .faq-image {
@@ -1415,7 +1743,59 @@ header nav a:hover {
     align-items: center;
     justify-content: flex-start;
     min-height: 800px;
-    padding: 5rem 4rem 7.5rem 4rem;
+    padding: 3.5rem 4rem 7.5rem 4rem;
+}
+
+.faq-contact-block {
+    background-color: #E9E4DE;
+    color: #1A1A1A;
+    min-height: 800px;
+    padding: 7.5rem 4rem 7.5rem 4rem;
+    justify-content: flex-start;
+}
+
+.faq-contact-content {
+    display: flex;
+    gap: 4rem;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.faq-contact-info {
+    flex: 1;
+    margin-top: 2rem;
+    text-align: left;
+}
+
+.faq-contact-info .tilmelding-form-title-container {
+    align-items: flex-start;
+}
+
+.faq-contact-description {
+    margin-top: 2rem;
+}
+
+.faq-contact-description p {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    text-align: left;
+}
+
+.faq-contact-content .tilmelding-form-container {
+    flex: 1;
+}
+
+.faq-contact-form .tilmelding-submit {
+    background-color: #1A1A1A;
+    color: #fff;
+}
+
+.faq-contact-form .form-group input:focus,
+.faq-contact-form .form-group textarea:focus {
+    border-color: #F35D8D;
 }
 
 .faq-grid {
@@ -1423,19 +1803,21 @@ header nav a:hover {
     grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
     width: 100%;
-    max-width: 1200px;
+    max-width: 1400px;
 }
 
 .faq-box {
-    background-color: #1A1A1A;
-    color: #fff;
-    padding: 1.5rem;
+    background-color: transparent;
+    color: #1A1A1A;
+    padding: 1.25rem;
     cursor: pointer;
     transition: background-color 0.2s;
+    text-align: left;
+    border: 2px solid #1A1A1A;
 }
 
 .faq-box:hover {
-    background-color: #2a2a2a;
+    background-color: #F35D8D;
 }
 
 .faq-box-header {
@@ -1447,19 +1829,15 @@ header nav a:hover {
 
 .faq-box-header h2 {
     font-family: 'Roboto', sans-serif;
-    font-size: 1.1rem;
+    font-size: 0.9rem;
     font-weight: 700;
-    margin: 0;
-    line-height: 1.3;
+    margin: 0 0 0.75rem 0;
+    line-height: 1.2;
+    color: #1A1A1A;
 }
 
 .faq-icon {
-    font-family: 'Roboto', sans-serif;
-    font-size: 1.5rem;
-    font-weight: 400;
-    line-height: 1;
-    transition: transform 0.3s;
-    flex-shrink: 0;
+    display: none;
 }
 
 .faq-box.active .faq-icon {
@@ -1484,70 +1862,7 @@ header nav a:hover {
     margin: 0;
 }
 
-/* FAQ Box Color Variants */
-.faq-box-dark {
-    background-color: #1A1A1A;
-    color: #fff;
-}
-
-.faq-box-dark:hover {
-    background-color: #2a2a2a;
-}
-
-.faq-box-pink {
-    background-color: #F35D8D;
-    color: #fff;
-}
-
-.faq-box-pink:hover {
-    background-color: #e04d7d;
-}
-
-.faq-box-purple {
-    background-color: #5D80F3;
-    color: #fff;
-}
-
-.faq-box-purple:hover {
-    background-color: #4a70e8;
-}
-
-.faq-box-yellow {
-    background-color: #F3F35D;
-    color: #1A1A1A;
-}
-
-.faq-box-yellow:hover {
-    background-color: #e6e650;
-}
-
-.faq-box-yellow .faq-box-answer a {
-    color: #1A1A1A;
-}
-
-.faq-box-green {
-    background-color: #92F35D;
-    color: #1A1A1A;
-}
-
-.faq-box-green:hover {
-    background-color: #82e34d;
-}
-
-.faq-box-green .faq-box-answer a {
-    color: #1A1A1A;
-}
-
-.faq-box-beige {
-    background-color: #E8DCC8;
-    color: #1A1A1A;
-}
-
-.faq-box-beige:hover {
-    background-color: #ddd0b8;
-}
-
-.faq-box-beige .faq-box-answer a {
+.faq-box-answer a {
     color: #1A1A1A;
 }
 
@@ -1592,10 +1907,11 @@ header nav a:hover {
     /* Block 1 */
     .block-1 {
         flex-direction: column;
-        height: auto;
-        min-height: auto;
+        height: auto !important;
+        min-height: auto !important;
         padding: 6rem 1.5rem 3rem 1.5rem;
         align-items: center;
+        overflow: hidden;
     }
 
     .block-1-title {
@@ -1606,6 +1922,12 @@ header nav a:hover {
         margin-left: 0;
         margin-top: 0;
         align-items: center;
+    }
+
+    .scroll-arrow {
+        position: static;
+        transform: none;
+        margin-top: 2rem;
     }
 
     /* Hide decorative elements on mobile */
@@ -1623,13 +1945,20 @@ header nav a:hover {
     /* Images in block 1 */
     .gemini-image,
     .gemini-container {
+        position: static !important;
         max-width: 100%;
         max-height: 400px;
+        margin-top: 2rem;
     }
 
     .program-image {
+        position: static !important;
         max-width: 100%;
         margin-top: 2rem;
+    }
+
+    .omos-bg-image {
+        display: none;
     }
 
     /* Block 2 */
@@ -1655,9 +1984,11 @@ header nav a:hover {
     }
 
     .block-2-description {
-        position: static;
-        transform: none;
-        max-width: 100%;
+        position: static !important;
+        transform: none !important;
+        max-width: 100% !important;
+        right: auto !important;
+        top: auto !important;
         margin-top: 1.5rem;
         text-align: center;
     }
@@ -1679,10 +2010,24 @@ header nav a:hover {
         transform: none;
         right: auto;
         top: auto;
+        max-width: 100%;
+    }
+
+    .index-page .block-2-button {
+        position: static;
+        transform: none;
+        margin-top: 2rem;
+        align-self: center;
     }
 
     .penge-image,
     .seddel-image {
+        display: none;
+    }
+
+    .index-page .smelte-penge-image,
+    .index-page .kalender-image,
+    .index-page .kort-image {
         display: none;
     }
 
@@ -1706,6 +2051,10 @@ header nav a:hover {
         left: auto;
     }
 
+    .index-page .block-3-hvor .block-3-description {
+        align-items: center !important;
+    }
+
     .block-3-title-container {
         align-items: center;
     }
@@ -1724,10 +2073,12 @@ header nav a:hover {
     }
 
     .marie-image {
-        position: static;
+        position: static !important;
         max-width: 100%;
         max-height: 350px;
         margin-top: 2rem;
+        left: auto !important;
+        right: auto !important;
     }
 
     /* Block 4 */
@@ -1739,10 +2090,16 @@ header nav a:hover {
 
     .block-4-content-left,
     .block-4-content-right {
-        position: static;
+        position: static !important;
         align-items: center;
         margin-top: 0;
         margin-bottom: 3rem;
+    }
+
+    .block-4-description,
+    .block-4-description-right {
+        position: static !important;
+        transform: none !important;
     }
 
     .block-4-title {
@@ -1762,6 +2119,11 @@ header nav a:hover {
     .block-4-description p,
     .block-4-description-right p {
         text-align: center;
+    }
+
+    .index-page .block-4-vildumed .block-4-content {
+        margin-top: 0;
+        max-width: 100%;
     }
 
     .red-box-left,
@@ -1808,18 +2170,52 @@ header nav a:hover {
     }
 
     .program-page .block-3 .larry-image {
-        position: static;
+        position: static !important;
         max-width: 100%;
         max-height: 350px;
         margin-top: 2rem;
     }
 
     .program-page .block-4 .globus-image {
-        position: static;
+        position: static !important;
         max-width: 100%;
         max-height: 350px;
         transform: none;
         margin-top: 2rem;
+    }
+
+    .program-page .kongekrone-image {
+        position: static !important;
+        max-width: 100%;
+        max-height: 350px;
+        transform: none;
+        margin-top: 2rem;
+    }
+
+    .program-page .block-2 .block-2-content,
+    .program-page .block-3 .block-2-content {
+        margin-top: 0;
+    }
+
+    .program-page .block-2 .block-2-description,
+    .program-page .block-3 .block-2-description {
+        margin-top: 0;
+    }
+
+    .program-page .horizontal-scroll-spacer {
+        display: none;
+    }
+
+    .program-intro-block {
+        flex-direction: column;
+    }
+
+    .program-intro-block .block-2-description {
+        max-width: 100%;
+    }
+
+    .teacher-grid {
+        flex-direction: column;
     }
 
     .program-page .block-4 .block-4-description {
@@ -1836,9 +2232,10 @@ header nav a:hover {
     }
 
     .tilmeld-image {
+        position: static !important;
         max-width: 100%;
         max-height: 350px;
-        top: 0;
+        top: auto;
         margin-left: 0;
         margin-top: 2rem;
     }
@@ -1850,6 +2247,18 @@ header nav a:hover {
     .tilmelding-block-2 {
         flex-direction: column;
         padding: 3rem 1.5rem;
+        min-height: auto !important;
+        height: auto !important;
+        overflow: visible !important;
+    }
+
+    .tilmelding-block-2 .tilmelding-form-title-container {
+        max-width: 100%;
+        align-items: center;
+    }
+
+    .tilmelding-block-2 .tilmelding-columns {
+        max-width: 100%;
     }
 
     .tilmelding-info {
@@ -1880,6 +2289,14 @@ header nav a:hover {
         max-width: 100%;
     }
 
+    .tilmelding-columns {
+        flex-direction: column;
+    }
+
+    .tilmelding-column {
+        width: 100%;
+    }
+
     /* Om Os Page */
     .omos-block-1 {
         height: auto;
@@ -1892,11 +2309,21 @@ header nav a:hover {
     .omos-block-2,
     .omos-block-3 {
         padding: 3rem 1.5rem;
+        min-height: auto;
     }
 
     .omos-block-2 .mont-image,
     .omos-block-3 .megafon-image {
         display: none;
+    }
+
+    .omos-block-2 .omos-content,
+    .omos-block-3 .omos-content {
+        margin-top: 0;
+    }
+
+    .omos-block-3 .omos-section {
+        width: auto;
     }
 
     .omos-section {
@@ -1922,15 +2349,30 @@ header nav a:hover {
     }
 
     .faq-image {
+        position: static !important;
         max-width: 100%;
         max-height: 350px;
-        top: 0;
+        top: auto;
         transform: none;
         margin-top: 2rem;
     }
 
     .faq-block-2 {
         padding: 3rem 1.5rem;
+        min-height: auto;
+    }
+
+    .faq-contact-block {
+        padding: 3rem 1.5rem;
+        min-height: auto;
+    }
+
+    .faq-contact-content {
+        flex-direction: column;
+    }
+
+    .faq-contact-content .tilmelding-form-container {
+        width: 100%;
     }
 
     .faq-grid {
@@ -1945,6 +2387,58 @@ header nav a:hover {
     .faq-box-header h2 {
         font-size: 1rem;
     }
+
+    /* Samarbejd Page */
+    .samarbejd-block-1 {
+        height: auto;
+    }
+
+    .samarbejd-title {
+        margin-left: 0;
+    }
+
+    .samarbejd-block-3 {
+        padding: 3rem 1.5rem;
+        min-height: auto;
+    }
+
+    .samarbejd-block-3 .omos-section {
+        align-items: center;
+    }
+
+    .samarbejd-block-3 .omos-description {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .samarbejd-block-3 .omos-description p {
+        text-align: center;
+    }
+
+    .samarbejd-block-4 {
+        padding: 3rem 1.5rem;
+        min-height: auto;
+    }
+
+    .samarbejd-block-4 .faq-contact-content {
+        flex-direction: column;
+    }
+
+    .samarbejd-block-4 .tilmelding-form-container {
+        width: 100%;
+    }
+
+    .samarbejd-block-4 .faq-contact-info {
+        text-align: center;
+    }
+
+    .samarbejd-block-4 .faq-contact-info .tilmelding-form-title-container {
+        align-items: center;
+    }
+
+    .samarbejd-block-4 .faq-contact-description p {
+        text-align: center;
+    }
 }
 
 /* Footer */
@@ -1954,57 +2448,75 @@ header nav a:hover {
     padding: 4rem 5rem 3rem 5rem;
 }
 
-.footer-top {
+.footer-content {
     display: flex;
-    justify-content: space-between;
+    gap: 4rem;
     align-items: flex-start;
-    margin-bottom: 3rem;
-    padding-bottom: 2rem;
-    border-bottom: 1px solid #333;
 }
 
-.footer-cta .footer-button {
-    display: inline-block;
+.footer-top-row {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    flex-shrink: 0;
+}
+
+.footer-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.footer-nav {
+    display: flex;
+    gap: 2rem;
+}
+
+.footer-nav a {
     font-family: 'Roboto', sans-serif;
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: #1A1A1A;
-    background-color: #F3F35D;
-    padding: 1rem 2rem;
+    font-size: 0.85rem;
+    color: #888;
     text-decoration: none;
-    transition: background-color 0.2s;
 }
 
-.footer-cta .footer-button:hover {
-    background-color: #fff;
-}
-
-.footer-samarbejd a {
-    font-family: 'Roboto Mono', monospace;
-    font-size: 0.9rem;
+.footer-nav a:hover {
     color: #F3F35D;
+}
+
+.footer-buttons .footer-button {
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #fff;
     text-decoration: none;
 }
 
-.footer-samarbejd a:hover {
+.footer-buttons .footer-button:hover {
     text-decoration: underline;
 }
 
-.footer-main {
+.footer-info {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 3rem;
-    margin-bottom: 3rem;
+    flex: 1;
+}
+
+.footer-info .footer-buttons {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
 }
 
 .footer-section h4 {
     font-family: 'Roboto', sans-serif;
     font-size: 0.85rem;
-    font-weight: 400;
-    color: #888;
+    font-weight: 700;
+    color: #F3F35D;
     margin-bottom: 1rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
+    text-transform: none;
+    letter-spacing: 0;
 }
 
 .footer-section a {
@@ -2024,6 +2536,11 @@ header nav a:hover {
     max-height: 40px;
     margin-bottom: 0.5rem;
     filter: brightness(0) invert(1);
+    transition: filter 0.2s;
+}
+
+.footer-section a:hover .footer-logo {
+    filter: brightness(0) invert(1) sepia(1) saturate(5) hue-rotate(10deg) brightness(1.1);
 }
 
 .footer-logos {
@@ -2054,7 +2571,6 @@ header nav a:hover {
     justify-content: space-between;
     align-items: center;
     padding-top: 2rem;
-    border-top: 1px solid #333;
 }
 
 .footer-links {
@@ -2091,10 +2607,43 @@ header nav a:hover {
         padding: 3rem 1.5rem 2rem 1.5rem;
     }
 
+    .footer-content {
+        flex-direction: column;
+        gap: 2rem;
+        align-items: center;
+    }
+
+    .footer-info {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        justify-items: center;
+    }
+
+    .footer-section {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-section h4 {
+        font-size: 0.7rem;
+    }
+
+    .footer-section a {
+        font-size: 0.75rem;
+    }
+
+    .footer-info .footer-buttons {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+    }
+
     .footer-top {
         flex-direction: column;
         gap: 1.5rem;
-        align-items: flex-start;
+        align-items: center;
     }
 
     .footer-main {
@@ -2105,77 +2654,73 @@ header nav a:hover {
     .footer-bottom {
         flex-direction: column;
         gap: 1.5rem;
-        align-items: flex-start;
+        align-items: center;
     }
 }
 
 /* Footer Page-Specific Colors */
 /* Om os page - Blue */
-.omos-page .footer-cta .footer-button {
-    background-color: #5D80F3;
-}
-.omos-page .footer-cta .footer-button:hover {
-    background-color: #7a99f5;
-}
-.omos-page .footer-samarbejd a,
-.omos-page .footer-contact a {
+.omos-page .footer-section h4 {
     color: #5D80F3;
 }
-.omos-page .footer-section a:hover,
-.omos-page .footer-links a:hover {
+.omos-page .footer-buttons .footer-button {
     color: #5D80F3;
+}
+.omos-page .footer-section a:hover {
+    color: #5D80F3;
+}
+.omos-page .footer-section a:hover .footer-logo {
+    filter: brightness(0) invert(1) sepia(1) saturate(5) hue-rotate(200deg) brightness(1.1);
 }
 
 /* Tilmelding page - Green */
-.tilmelding-page .footer-cta .footer-button {
-    background-color: #92F35D;
-}
-.tilmelding-page .footer-cta .footer-button:hover {
-    background-color: #a8f57d;
-}
-.tilmelding-page .footer-samarbejd a,
-.tilmelding-page .footer-contact a {
+.tilmelding-page .footer-section h4 {
     color: #92F35D;
 }
-.tilmelding-page .footer-section a:hover,
-.tilmelding-page .footer-links a:hover {
+.tilmelding-page .footer-buttons .footer-button {
     color: #92F35D;
+}
+.tilmelding-page .footer-section a:hover {
+    color: #92F35D;
+}
+.tilmelding-page .footer-section a:hover .footer-logo {
+    filter: brightness(0) invert(1) sepia(1) saturate(5) hue-rotate(60deg) brightness(1.1);
 }
 
-/* FAQ page - White text with random colorful hovers */
-.faq-page .footer-cta .footer-button {
-    background-color: #fff;
-    color: #1A1A1A;
-    transition: background-color 0.2s;
-}
-.faq-page .footer-cta .footer-button:hover {
-    color: #fff;
-}
-.faq-page .footer-samarbejd a,
-.faq-page .footer-contact a,
-.faq-page .footer-section a,
-.faq-page .footer-links a {
-    color: #fff;
-    transition: color 0.2s;
-}
+/* FAQ page - Pink */
 .faq-page .footer-section h4 {
-    color: #fff;
+    color: #F35D8D;
+}
+.faq-page .footer-buttons .footer-button {
+    color: #F35D8D;
+}
+.faq-page .site-footer a:hover,
+.faq-page .footer-section a:hover,
+.faq-page .footer-nav a:hover,
+.faq-page .footer-links a:hover,
+.faq-page .footer-contact a:hover,
+.faq-page .footer-buttons .footer-button:hover {
+    color: #F35D8D;
+}
+.faq-page .footer-contact a {
+    color: #F35D8D;
+}
+.faq-page .footer-section a:hover .footer-logo {
+    filter: brightness(0) invert(1) sepia(1) saturate(5) hue-rotate(310deg) brightness(1.1);
 }
 
 /* Program page - Green */
-.program-page .footer-cta .footer-button {
-    background-color: #4ADE80;
-}
-.program-page .footer-cta .footer-button:hover {
-    background-color: #6be69a;
-}
-.program-page .footer-samarbejd a,
-.program-page .footer-contact a {
+.program-page .footer-section h4 {
     color: #4ADE80;
 }
-.program-page .footer-section a:hover,
-.program-page .footer-links a:hover {
+.program-page .footer-buttons .footer-button {
     color: #4ADE80;
+}
+.program-page .footer-section a:hover {
+    color: #4ADE80;
+}
+.program-page .footer-section a:hover .footer-logo {
+    filter: brightness(0) invert(1) sepia(1) saturate(5) hue-rotate(90deg) brightness(1.1);
 }
 
 /* Smelte Penge Image - Index Block 3 */
@@ -2205,8 +2750,8 @@ header nav a:hover {
     position: absolute;
     right: 4rem;
     top: 20%;
-    max-width: 525px;
-    max-height: 525px;
+    max-width: 500px;
+    max-height: 500px;
     filter: grayscale(100%) contrast(1.1);
     z-index: 0;
     transform: rotate(-30deg);

@@ -41,7 +41,31 @@ document.addEventListener('DOMContentLoaded', function() {
     if (document.body.classList.contains('faq-page')) {
         initFaqScroll();
     }
+
+    // Magnetic scroll for samarbejd page
+    if (document.body.classList.contains('samarbejd-page')) {
+        initSamarbejdScroll();
+    }
 });
+
+function smoothScrollTo(targetY) {
+    const startY = window.scrollY;
+    const diff = targetY - startY;
+    const duration = 500;
+    const startTime = performance.now();
+
+    function step(currentTime) {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        window.scrollTo(0, startY + diff * eased);
+        if (progress < 1) {
+            requestAnimationFrame(step);
+        }
+    }
+
+    requestAnimationFrame(step);
+}
 
 function initTilmeldingScroll() {
     if (isMobile()) return; // Disable magnetic scroll on mobile
@@ -86,8 +110,20 @@ function initTilmeldingScroll() {
         requestAnimationFrame(step);
     }
 
+    // Scroll arrow click
+    const scrollArrow = document.querySelector('.scroll-arrow');
+    if (scrollArrow) {
+        scrollArrow.addEventListener('click', function() {
+            if (currentView === 0) {
+                currentView = 1;
+                animateTo(snapPoints[1]);
+            }
+        });
+    }
+
     // Take complete control of scrolling
     window.addEventListener('wheel', function(e) {
+        if (isMobile()) return;
         e.preventDefault();
 
         if (isAnimating) return;
@@ -158,8 +194,20 @@ function initOmosScroll() {
         requestAnimationFrame(step);
     }
 
+    // Scroll arrow click
+    const scrollArrow = document.querySelector('.scroll-arrow');
+    if (scrollArrow) {
+        scrollArrow.addEventListener('click', function() {
+            if (currentView === 0) {
+                currentView = 1;
+                animateTo(snapPoints[1]);
+            }
+        });
+    }
+
     // Take complete control of scrolling
     window.addEventListener('wheel', function(e) {
+        if (isMobile()) return;
         e.preventDefault();
 
         if (isAnimating) return;
@@ -190,16 +238,17 @@ function initFaqScroll() {
     if (isMobile()) return; // Disable magnetic scroll on mobile
 
     const block2 = document.querySelector('.faq-block-2');
+    const contactBlock = document.querySelector('.faq-contact-block');
     const footer = document.querySelector('.site-footer');
-    if (!block2 || !footer) return;
+    if (!block2 || !contactBlock || !footer) return;
 
-    // State: 0 = viewing block 1, 1 = viewing block 2, 2 = footer
+    // State: 0 = viewing block 1, 1 = viewing block 2, 2 = contact block, 3 = footer
     let currentView = 0;
     let isAnimating = false;
     let scrollAccumulator = 0;
     let lastScrollTime = 0;
 
-    const snapPoints = [0, block2.offsetTop, footer.offsetTop];
+    const snapPoints = [0, block2.offsetTop, contactBlock.offsetTop, footer.offsetTop];
     const threshold = 80;
 
     // Ensure we start at top
@@ -229,8 +278,20 @@ function initFaqScroll() {
         requestAnimationFrame(step);
     }
 
+    // Scroll arrow click
+    const scrollArrow = document.querySelector('.scroll-arrow');
+    if (scrollArrow) {
+        scrollArrow.addEventListener('click', function() {
+            if (currentView === 0) {
+                currentView = 1;
+                animateTo(snapPoints[1]);
+            }
+        });
+    }
+
     // Take complete control of scrolling
     window.addEventListener('wheel', function(e) {
+        if (isMobile()) return;
         e.preventDefault();
 
         if (isAnimating) return;
@@ -243,12 +304,90 @@ function initFaqScroll() {
         scrollAccumulator += e.deltaY;
 
         if (Math.abs(scrollAccumulator) > threshold) {
-            if (scrollAccumulator > 0 && currentView < 2) {
+            if (scrollAccumulator > 0 && currentView < 3) {
                 // Scroll down: go to next section
                 currentView++;
                 animateTo(snapPoints[currentView]);
             } else if (scrollAccumulator < 0 && currentView > 0) {
                 // Scroll up: go to previous section
+                currentView--;
+                animateTo(snapPoints[currentView]);
+            }
+            scrollAccumulator = 0;
+        }
+    }, { passive: false });
+}
+
+function initSamarbejdScroll() {
+    if (isMobile()) return;
+
+    const block2 = document.querySelector('.samarbejd-block-3');
+    const block3 = document.querySelector('.samarbejd-block-4');
+    const footer = document.querySelector('.site-footer');
+    if (!block2 || !block3 || !footer) return;
+
+    let currentView = 0;
+    let isAnimating = false;
+    let scrollAccumulator = 0;
+    let lastScrollTime = 0;
+
+    const snapPoints = [0, block2.offsetTop, block3.offsetTop, footer.offsetTop];
+    const threshold = 80;
+
+    window.scrollTo(0, 0);
+
+    function animateTo(targetY) {
+        isAnimating = true;
+        const startY = window.scrollY;
+        const diff = targetY - startY;
+        const duration = 500;
+        const startTime = performance.now();
+
+        function step(currentTime) {
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            const eased = 1 - Math.pow(1 - progress, 3);
+
+            window.scrollTo(0, startY + diff * eased);
+
+            if (progress < 1) {
+                requestAnimationFrame(step);
+            } else {
+                isAnimating = false;
+            }
+        }
+
+        requestAnimationFrame(step);
+    }
+
+    const scrollArrow = document.querySelector('.scroll-arrow');
+    if (scrollArrow) {
+        scrollArrow.addEventListener('click', function() {
+            if (currentView === 0) {
+                currentView = 1;
+                animateTo(snapPoints[1]);
+            }
+        });
+    }
+
+    window.addEventListener('wheel', function(e) {
+        if (isMobile()) return;
+        e.preventDefault();
+
+        if (isAnimating) return;
+
+        const currentTime = Date.now();
+        if (currentTime - lastScrollTime > 200) {
+            scrollAccumulator = 0;
+        }
+        lastScrollTime = currentTime;
+        scrollAccumulator += e.deltaY;
+
+        if (Math.abs(scrollAccumulator) > threshold) {
+            if (scrollAccumulator > 0 && currentView < 3) {
+                currentView++;
+                animateTo(snapPoints[currentView]);
+            } else if (scrollAccumulator < 0 && currentView > 0) {
                 currentView--;
                 animateTo(snapPoints[currentView]);
             }
@@ -303,8 +442,20 @@ function initIndexScroll() {
         requestAnimationFrame(step);
     }
 
+    // Scroll arrow click
+    const scrollArrow = document.querySelector('.scroll-arrow');
+    if (scrollArrow) {
+        scrollArrow.addEventListener('click', function() {
+            if (currentView === 0) {
+                currentView = 1;
+                animateTo(snapPoints[1]);
+            }
+        });
+    }
+
     // Take complete control of scrolling
     window.addEventListener('wheel', function(e) {
+        if (isMobile()) return;
         e.preventDefault();
 
         if (isAnimating || !canScroll) return;
@@ -342,7 +493,7 @@ function initHorizontalScroll() {
     if (isMobile()) return; // Disable horizontal scroll on mobile
 
     let currentSlide = 0;
-    const totalSlides = 5; // blocks 2-5 (4 kursusgange + skal du med)
+    const totalSlides = 6; // om forløbet + 4 kursusgange + skal du med
     let scrollAccumulator = 0;
     let lastScrollTime = 0;
     let touchStartX = 0;
@@ -364,9 +515,18 @@ function initHorizontalScroll() {
 
     console.log('Container top:', containerTop, 'Activation point:', activationPoint);
 
+    // Scroll arrow click
+    const scrollArrow = document.querySelector('.scroll-arrow');
+    if (scrollArrow) {
+        scrollArrow.addEventListener('click', function() {
+            window.scrollTo({ top: activationPoint, behavior: 'smooth' });
+        });
+    }
+
     window.addEventListener('scroll', checkScrollPosition);
 
     function checkScrollPosition() {
+        if (isMobile()) return;
         const scrollY = window.scrollY || window.pageYOffset;
 
         if (scrollY >= activationPoint && !isHorizontalMode && !exitCooldown) {

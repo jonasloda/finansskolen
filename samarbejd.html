@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Finansskolen - Tilmelding</title>
+    <title>Finansskolen - Samarbejd</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Roboto+Mono&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="tilmelding-page">
+<body class="samarbejd-page">
 
     <header>
         <nav>
@@ -21,7 +21,7 @@
         </nav>
     </header>
 
-    <div class="block block-1 tilmelding-block-1">
+    <div class="block block-1 samarbejd-block-1">
         <div class="vertical-line vertical-line-top"></div>
         <div class="vertical-line vertical-line-bottom"></div>
         <div class="scrolling-text scrolling-text-right">
@@ -31,32 +31,56 @@
             hver torsdag i april // studiestræde 24 // fra kl. 17 til 20 // hver torsdag i april // studiestræde 24 // fra kl. 17 til 20 // hver torsdag i april // studiestræde 24 // fra kl. 17 til 20 // hver torsdag i april // studiestræde 24 // fra kl. 17 til 20 // hver torsdag i april // studiestræde 24 // fra kl. 17 til 20 // hver torsdag i april // studiestræde 24 // fra kl. 17 til 20 //
         </div>
         <div class="background-box"></div>
-        <div class="title-container tilmelding-title">
-            <h1 class="block-1-title">TILMELDING</h1>
-            <h1 class="block-1-title title-mirrored">TILMELDING</h1>
+        <div class="title-container samarbejd-title">
+            <h1 class="block-1-title">SAMARBEJDE</h1>
+            <h1 class="block-1-title title-mirrored">SAMARBEJDE</h1>
         </div>
-        <img src="images/papir.png" alt="Papir" class="tilmeld-papir-image">
-        <img src="images/tilmelding.png" alt="Tilmelding" class="tilmeld-image">
         <div class="scroll-arrow">&#8595;</div>
     </div>
 
-    <div class="block block-2 tilmelding-block-2">
-        <div class="tilmelding-form-title-container">
-            <h1 class="block-2-title">VIL DU MED?</h1>
-            <h1 class="block-2-title title-mirrored">VIL DU MED?</h1>
-        </div>
-        <div class="tilmelding-columns">
-            <div class="tilmelding-column">
-                <h2 class="tilmelding-column-title">FYSISK DELTAGELSE</h2>
-                <p class="tilmelding-column-description">Deltag fysisk på Studiestræde 24, København. Inkluderer vegetarisk aftensmad, forplejning og adgang til online materiale.</p>
-                <p class="tilmelding-column-description">Efter tilmelding modtager du en bekræftelse på mail. Mere information følger inden første kursusgang den 22. april.</p>
-                <a href="#" class="tilmelding-column-button">Tilmeld dig fysisk</a>
+    <div class="block block-2 samarbejd-block-3">
+        <div class="omos-content">
+            <div class="omos-section">
+                <div class="omos-section-title-container">
+                    <h1 class="block-2-title">SAMARBEJD MED OS</h1>
+                    <h1 class="block-2-title title-mirrored">SAMARBEJD MED OS</h1>
+                </div>
+                <div class="omos-description">
+                    <p>Finansskolen er et undervisningsforløb, der har til formål at undervise og inspirere nysgerrige unge til at forstå finanssektorens rolle i samfundet, økonomien og de kriser, vi står over for.</p>
+                    <p>Vi samarbejder med fonde, organisationer, undervisere og enkeltpersoner om at udbrede kendskabet til finanssektorens rolle i samfundet. Finansskolen tilbyder kursusforløb, debatter og online adgang til indhold, som gør finansverdenen tilgængelig og forståelig.</p>
+                    <p>Støt vores arbejde, giv dine medlemmer adgang, eller få os til at holde et oplæg. Vi er åbne for idéer og dialog.</p>
+                </div>
             </div>
-            <div class="tilmelding-column">
-                <h2 class="tilmelding-column-title">ONLINE DELTAGELSE</h2>
-                <p class="tilmelding-column-description">Alle kursusgange optages og uploades efter kursusforløbet er afsluttet. Du får adgang til optagelserne samt online materiale.</p>
-                <p class="tilmelding-column-description">Efter tilmelding modtager du en bekræftelse på mail. Mere information følger efter kursusforløbet er afsluttet.</p>
-                <a href="#" class="tilmelding-column-button">Tilmeld dig online</a>
+        </div>
+    </div>
+
+    <div class="block block-3 samarbejd-block-4">
+        <div class="faq-contact-content">
+            <div class="faq-contact-info">
+                <div class="tilmelding-form-title-container">
+                    <h1 class="block-2-title">SKRIV TIL OS</h1>
+                    <h1 class="block-2-title title-mirrored">SKRIV TIL OS</h1>
+                </div>
+                <div class="faq-contact-description">
+                    <p>Skriv til os for samarbejde.</p>
+                </div>
+            </div>
+            <div class="tilmelding-form-container">
+                <form class="tilmelding-form samarbejd-contact-form">
+                    <div class="form-group">
+                        <label for="samarbejd-navn">Navn</label>
+                        <input type="text" id="samarbejd-navn" name="navn" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="samarbejd-email">Email</label>
+                        <input type="email" id="samarbejd-email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="samarbejd-besked">Din besked</label>
+                        <textarea id="samarbejd-besked" name="besked" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="tilmelding-submit">Send besked</button>
+                </form>
             </div>
         </div>
     </div>

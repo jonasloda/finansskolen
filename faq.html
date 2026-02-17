@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Finansskolen - FAQ</title>
+    <title>Finansskolen - Spørgsmål</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Roboto+Mono&display=swap" rel="stylesheet">
@@ -17,7 +17,7 @@
             <a href="omos.html">Om os</a>
             <a href="program.html">Program</a>
             <a href="tilmelding.html">Tilmelding</a>
-            <a href="faq.html">FAQ</a>
+            <a href="faq.html">Spørgsmål</a>
         </nav>
     </header>
 
@@ -32,15 +32,16 @@
         </div>
         <div class="background-box"></div>
         <div class="title-container faq-title">
-            <h1 class="block-1-title">FAQ</h1>
-            <h1 class="block-1-title title-mirrored">FAQ</h1>
+            <h1 class="block-1-title">SPØRGSMÅL</h1>
+            <h1 class="block-1-title title-mirrored">SPØRGSMÅL</h1>
         </div>
         <img src="images/hånd.png" alt="Hånd" class="faq-image">
+        <div class="scroll-arrow">&#8595;</div>
     </div>
 
     <div class="block block-2 faq-block-2">
         <div class="faq-grid">
-            <div class="faq-box faq-box-dark" onclick="toggleFaq(this)">
+            <div class="faq-box faq-box-dark active">
                 <div class="faq-box-header">
                     <h2>Hvem må deltage på Finansskolen?</h2>
                     <span class="faq-icon">+</span>
@@ -50,17 +51,16 @@
                     <p><a href="index.html#block-4">Tilmeld dig her</a></p>
                 </div>
             </div>
-            <div class="faq-box faq-box-pink" onclick="toggleFaq(this)">
+            <div class="faq-box faq-box-pink active">
                 <div class="faq-box-header">
                     <h2>Hvad får jeg med i billetten?</h2>
                     <span class="faq-icon">+</span>
                 </div>
                 <div class="faq-box-answer">
                     <p>Én billet til Finansskolen 2026 giver dig: adgang til fire aftener med kuraterede oplæg, aftensmad, forplejning og adgang til vores online materiale.</p>
-                    <p><a href="index.html#block-4">Tilmeld dig her</a></p>
                 </div>
             </div>
-            <div class="faq-box faq-box-purple" onclick="toggleFaq(this)">
+            <div class="faq-box faq-box-purple active">
                 <div class="faq-box-header">
                     <h2>Hvor foregår Finansskolen?</h2>
                     <span class="faq-icon">+</span>
@@ -69,7 +69,7 @@
                     <p>Finansskolen sker på Studiestræde 24, st., 1455 København K. Du går ind gennem porten og til højre er der en lille trappe til lokalet. Bare rolig, der vil være skilte til at vise vej.</p>
                 </div>
             </div>
-            <div class="faq-box faq-box-yellow" onclick="toggleFaq(this)">
+            <div class="faq-box faq-box-yellow active">
                 <div class="faq-box-header">
                     <h2>Hvilken mad får vi at spise?</h2>
                     <span class="faq-icon">+</span>
@@ -78,7 +78,7 @@
                     <p>Til hver kursusgang vil der være sunde snacks, sodavand og andet at finde til forplejning. Undervejs vil alle deltagere få tilbudt en vegetarisk slider fra Ristet Rug.</p>
                 </div>
             </div>
-            <div class="faq-box faq-box-beige" onclick="toggleFaq(this)">
+            <div class="faq-box faq-box-beige active">
                 <div class="faq-box-header">
                     <h2>Kan jeg deltage i enkelte sessioner?</h2>
                     <span class="faq-icon">+</span>
@@ -87,7 +87,7 @@
                     <p>Ja det kan du. Vi anbefaler dog at være med til alle aftener for at få det bedste udbytte med de andre deltagere.</p>
                 </div>
             </div>
-            <div class="faq-box faq-box-green" onclick="toggleFaq(this)">
+            <div class="faq-box faq-box-green active">
                 <div class="faq-box-header">
                     <h2>Kan jeg få rabat?</h2>
                     <span class="faq-icon">+</span>
@@ -99,43 +99,64 @@
         </div>
     </div>
 
+    <div class="block block-3 faq-contact-block">
+        <div class="faq-contact-content">
+            <div class="faq-contact-info">
+                <div class="tilmelding-form-title-container">
+                    <h1 class="block-2-title">SPØRGSMÅL?</h1>
+                    <h1 class="block-2-title title-mirrored">SPØRGSMÅL?</h1>
+                </div>
+                <div class="faq-contact-description">
+                    <p>Har du et spørgsmål, der ikke er besvaret ovenfor? Skriv til os, så vender vi tilbage hurtigst muligt.</p>
+                </div>
+            </div>
+            <div class="tilmelding-form-container">
+                <form class="tilmelding-form faq-contact-form">
+                    <div class="form-group">
+                        <label for="kontakt-navn">Navn</label>
+                        <input type="text" id="kontakt-navn" name="navn" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="kontakt-email">Email</label>
+                        <input type="email" id="kontakt-email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="kontakt-besked">Dit spørgsmål</label>
+                        <textarea id="kontakt-besked" name="besked" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="tilmelding-submit">Send spørgsmål</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
     <footer class="site-footer">
-        <div class="footer-top">
-            <div class="footer-cta">
-                <a href="tilmelding.html" class="footer-button">Tilmeld dig</a>
-            </div>
-            <div class="footer-samarbejd">
-                <a href="samarbejd.html">Samarbejd med Finansskolen</a>
-            </div>
-        </div>
-        <div class="footer-main">
-            <div class="footer-section">
-                <h4>Udviklet og afviklet af</h4>
-                <a href="https://godepenge.dk" target="_blank">Gode Penge</a>
-            </div>
-            <div class="footer-section">
-                <h4>Med støtte fra</h4>
-                <a href="#">Folkesparekassens Fond</a>
-            </div>
-            <div class="footer-section">
-                <h4>Med opbakning fra</h4>
-                <a href="#">Ude af Kurs</a>
-                <a href="#">Føljeton</a>
-                <a href="#">Rethinking Economics Danmark</a>
-            </div>
-            <div class="footer-section">
-                <h4>Lær mere</h4>
-                <a href="#">Vil du lære mere om kritisk økonomi?</a>
-                <a href="#">Vil du dykke ned i investeringer?</a>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <div class="footer-links">
-                <a href="omos.html">Om os</a>
-                <a href="faq.html">FAQ</a>
-            </div>
-            <div class="footer-contact">
-                <a href="mailto:finansskolen@godepenge.dk">Skriv til os</a>
+        <div class="footer-content">
+            <div class="footer-info">
+                <div class="footer-section">
+                    <h4>Udviklet og afviklet af</h4>
+                    <a href="https://godepenge.dk" target="_blank"><img src="images/godepenge copy.png" alt="Gode Penge" class="footer-logo"></a>
+                </div>
+                <div class="footer-section">
+                    <h4>Med støtte fra</h4>
+                    <a href="#"><img src="images/FS-Fond-logo.png" alt="Folkesparekassens Fond" class="footer-logo"></a>
+                </div>
+                <div class="footer-section">
+                    <h4>Med opbakning fra</h4>
+                    <a href="#">Ude af Kurs</a>
+                    <a href="#">Føljeton</a>
+                    <a href="#">Rethinking Economics Danmark</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Lær mere</h4>
+                    <a href="#">Vil du lære mere om kritisk økonomi?</a>
+                    <a href="#">Vil du dykke ned i investeringer?</a>
+                </div>
+                <div class="footer-section footer-buttons">
+                    <a href="tilmelding.html" class="footer-button">Tilmeld dig</a>
+                    <a href="mailto:finansskolen@godepenge.dk" class="footer-button">Skriv til os</a>
+                    <a href="samarbejd.html" class="footer-button">Samarbejd med Finansskolen</a>
+                </div>
             </div>
         </div>
     </footer>
