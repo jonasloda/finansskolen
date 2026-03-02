@@ -523,6 +523,23 @@ function initHorizontalScroll() {
         });
     }
 
+    // Scroll to top button
+    const scrollTopBtn = document.getElementById('scroll-top-btn');
+    if (scrollTopBtn) {
+        scrollTopBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            isHorizontalMode = false;
+            window.removeEventListener('wheel', handleWheel);
+            document.body.style.overflow = '';
+            currentSlide = 0;
+            scrollAccumulator = 0;
+            updateSlidePosition();
+            exitCooldown = true;
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            setTimeout(() => { exitCooldown = false; }, 1000);
+        });
+    }
+
     window.addEventListener('scroll', checkScrollPosition);
 
     function checkScrollPosition() {

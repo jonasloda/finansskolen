@@ -54,6 +54,7 @@ header {
 header nav {
     display: flex;
     gap: 3rem;
+    align-items: center;
 }
 
 header nav a {
@@ -67,6 +68,20 @@ header nav a:hover {
     text-decoration: underline;
 }
 
+header nav .nav-button {
+    background-color: #1A1A1A;
+    color: #fff;
+    padding: 0.5rem 1.2rem;
+    border-radius: 0;
+    font-weight: 700;
+    margin-left: auto;
+}
+
+header nav .nav-button:hover {
+    text-decoration: none;
+    opacity: 0.9;
+}
+
 /* Blocks */
 .block {
     position: relative;
@@ -77,6 +92,51 @@ header nav a:hover {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.scroll-arrow-container {
+    position: absolute;
+    bottom: 12rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 20;
+    animation: bounce-container 2s ease infinite;
+}
+
+@keyframes bounce-container {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    40% {
+        transform: translateX(-50%) translateY(-10px);
+    }
+    60% {
+        transform: translateX(-50%) translateY(-5px);
+    }
+}
+
+.scroll-button {
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #fff;
+    background-color: #1A1A1A;
+    padding: 0.5rem 1.2rem;
+    text-decoration: none;
+    margin-bottom: 0.5rem;
+}
+
+.scroll-button:hover {
+    opacity: 0.9;
+}
+
+.scroll-arrow-container .scroll-arrow {
+    position: static;
+    transform: none;
+    animation: none;
 }
 
 .scroll-arrow {
@@ -117,10 +177,10 @@ header nav a:hover {
 }
 
 .index-page .penge-image {
-    margin-top: 1rem;
-    margin-left: 9rem;
-    max-width: 475px;
-    max-height: 475px;
+    margin-top: -4.5rem;
+    margin-left: -2rem;
+    max-width: 700px;
+    max-height: 700px;
 }
 
 .index-page .block-2-content {
@@ -143,7 +203,7 @@ header nav a:hover {
     right: 35rem;
     transform: translateX(100%);
     background-color: #1A1A1A;
-    color: #F3F35D;
+    color: #fff;
     font-family: 'Roboto', sans-serif;
     font-size: 1.1rem;
     font-weight: 700;
@@ -188,7 +248,7 @@ header nav a:hover {
 }
 
 .index-page .block-3-description a {
-    color: #F3F35D;
+    color: #fff;
     font-family: 'Roboto', sans-serif;
     font-weight: 700;
     text-decoration: none;
@@ -232,6 +292,11 @@ header nav a:hover {
 
 .index-page header nav a {
     color: #1A1A1A;
+}
+
+.index-page header nav .nav-button {
+    background-color: #1A1A1A;
+    color: #fff;
 }
 
 .block h2 {
@@ -325,6 +390,11 @@ header nav a:hover {
 
 .program-page header nav a {
     color: #1A1A1A;
+}
+
+.program-page header nav .nav-button {
+    background-color: #1A1A1A;
+    color: #fff;
 }
 
 .program-page .background-box {
@@ -470,6 +540,17 @@ header nav a:hover {
 .gemini-container {
     display: flex;
     flex-direction: column;
+}
+
+.brain-image {
+    position: absolute;
+    max-width: 675px;
+    max-height: 675px;
+    filter: grayscale(100%) brightness(1.7) contrast(0.95) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='3' result='noise'/%3E%3CfeColorMatrix in='noise' type='saturate' values='0' result='monoNoise'/%3E%3CfeBlend in='SourceGraphic' in2='monoNoise' mode='multiply' result='blend'/%3E%3CfeComposite in='blend' in2='SourceGraphic' operator='in'/%3E%3C/filter%3E%3C/svg%3E#grain");
+    z-index: 4;
+    right: -10rem;
+    top: 65%;
+    transform: translateY(-50%);
 }
 
 .gemini-image {
@@ -648,7 +729,7 @@ header nav a:hover {
 }
 
 .block-3-dates {
-    margin-top: 1.5rem;
+    margin-top: 0.5rem;
     margin-bottom: 1.5rem;
     list-style-type: disc;
     padding-left: 1.5rem;
@@ -658,7 +739,7 @@ header nav a:hover {
 .index-page .block-3 .block-3-description .block-3-dates li {
     font-family: 'Roboto', sans-serif;
     font-weight: 700;
-    color: #F3F35D;
+    color: #fff;
     margin-bottom: 0.25rem;
     line-height: 1.4;
     font-size: 0.9rem;
@@ -977,11 +1058,11 @@ header nav a:hover {
 
 .program-page .block-4 .globus-image {
     position: absolute;
-    right: -5rem;
+    right: 2rem;
     top: 50%;
     transform: translateY(-50%);
-    max-width: 1000px;
-    max-height: 1000px;
+    max-width: 700px;
+    max-height: 700px;
     filter: grayscale(100%) contrast(1.1) brightness(1.2);
     z-index: 4;
 }
@@ -991,14 +1072,18 @@ header nav a:hover {
     right: -5rem;
     top: 50%;
     transform: translateY(-50%) rotate(10deg);
-    max-width: 1000px;
-    max-height: 1000px;
+    max-width: 850px;
+    max-height: 850px;
     filter: grayscale(100%) contrast(0.9) brightness(1.2);
     z-index: 4;
 }
 
 .program-page .horizontal-scroll-container .block-5 {
     position: relative;
+}
+
+.program-footer {
+    display: none;
 }
 
 .program-intro-block {
@@ -1043,10 +1128,32 @@ header nav a:hover {
 
 .teacher-photo-placeholder {
     width: 120px;
-    height: 120px;
+    height: 180px;
     border-radius: 50%;
     background-color: #ccc;
     margin: 0 auto 1rem;
+}
+
+.teacher-photo {
+    width: 158px;
+    height: 230px;
+    object-fit: contain;
+    object-position: bottom;
+    border-radius: 0;
+    margin: 0 auto 1rem;
+    display: block;
+    filter: grayscale(100%) contrast(1.1);
+}
+
+.teacher-photo-large {
+    width: 215px;
+    height: 230px;
+    object-position: center 40%;
+}
+
+.teacher-photo-xlarge {
+    width: 230px;
+    height: 230px;
 }
 
 .teacher-card p {
@@ -1064,8 +1171,46 @@ header nav a:hover {
 .program-block-5 {
     background-color: #E9E4DE;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.scroll-top-arrow {
+    position: absolute;
+    top: 1.5rem;
+    left: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #fff;
+    background-color: #1A1A1A;
+    width: 2.5rem;
+    height: 2.5rem;
+    cursor: pointer;
+    z-index: 20;
+    transition: background-color 0.2s;
+}
+
+.scroll-top-arrow:hover {
+    background-color: #333;
+}
+
+.scroll-top-icon {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.scroll-top-label {
+    display: none;
+}
+
+.scroll-top-label {
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    margin-top: 0.25rem;
 }
 
 .block-5-content {
@@ -1132,6 +1277,11 @@ header nav a:hover {
 
 .tilmelding-page header nav a {
     color: #1A1A1A;
+}
+
+.tilmelding-page header nav .nav-button {
+    background-color: #1A1A1A;
+    color: #fff;
 }
 
 .tilmelding-block-1 {
@@ -1212,10 +1362,17 @@ header nav a:hover {
 
 h2.tilmelding-column-title {
     font-family: 'Roboto', sans-serif;
-    font-size: 0.9rem;
+    font-size: 1.2rem;
     font-weight: 700;
     margin: 0 0 0.75rem 0;
     line-height: 1.2;
+}
+
+.tilmelding-column-price {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 0 0 1rem 0;
 }
 
 .tilmelding-column-description {
@@ -1374,6 +1531,11 @@ h2.tilmelding-column-title {
     color: #1A1A1A;
 }
 
+.omos-page header nav .nav-button {
+    background-color: #1A1A1A;
+    color: #fff;
+}
+
 .omos-block-1 {
     background-color: #5D80F3;
     color: #1A1A1A;
@@ -1408,7 +1570,7 @@ h2.tilmelding-column-title {
 }
 
 .omos-title {
-    margin-left: 15.5rem;
+    margin-left: 9.8rem;
 }
 
 .omos-page .omos-bg-image {
@@ -1443,8 +1605,8 @@ h2.tilmelding-column-title {
 }
 
 .omos-block-2 {
-    background-color: #1A1A1A;
-    color: #fff;
+    background-color: #E9E4DE;
+    color: #1A1A1A;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
@@ -1453,11 +1615,11 @@ h2.tilmelding-column-title {
 }
 
 .omos-block-2 .block-2-title {
-    color: #5D80F3;
+    color: #1A1A1A;
 }
 
 .omos-block-2 .omos-description p {
-    color: #fff;
+    color: #1A1A1A;
 }
 
 .omos-content {
@@ -1572,12 +1734,12 @@ h2.tilmelding-column-title {
 }
 
 .omos-block-2 .omos-link {
-    background-color: #5D80F3;
+    background-color: #1A1A1A;
     color: #fff;
 }
 
 .omos-block-2 .omos-link:hover {
-    background-color: #4a6de0;
+    background-color: #333;
 }
 
 .omos-block-3 .omos-link {
@@ -1586,12 +1748,12 @@ h2.tilmelding-column-title {
 }
 
 .omos-block-3 .omos-link:hover {
-    background-color: #4a6de0;
+    background-color: #333;
 }
 
 /* Samarbejd Page Styles */
 .samarbejd-page header {
-    background-color: #E9E4DE;
+    background-color: #F35D8D;
     color: #1A1A1A;
 }
 
@@ -1599,15 +1761,31 @@ h2.tilmelding-column-title {
     color: #1A1A1A;
 }
 
+.samarbejd-page header nav .nav-button {
+    background-color: #1A1A1A;
+    color: #fff;
+}
+
 .samarbejd-block-1 {
-    background-color: #E9E4DE;
+    background-color: #F35D8D;
     color: #1A1A1A;
     height: 850px;
     position: relative;
 }
 
+.haender-image {
+    position: absolute;
+    right: -4rem;
+    top: 50%;
+    transform: translateY(-50%);
+    max-width: 780px;
+    max-height: 780px;
+    filter: grayscale(100%) contrast(1.1);
+    z-index: 5;
+}
+
 .samarbejd-block-1::before {
-    background-color: #E9E4DE;
+    background-color: #F35D8D;
 }
 
 .samarbejd-block-1 .vertical-line {
@@ -1628,7 +1806,7 @@ h2.tilmelding-column-title {
 }
 
 .samarbejd-block-1 .background-box {
-    background-color: #E9E4DE;
+    background-color: #F35D8D;
 }
 
 .samarbejd-title {
@@ -1639,20 +1817,29 @@ h2.tilmelding-column-title {
     background-color: #1A1A1A;
     color: #fff;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
     min-height: 800px;
     padding: 5rem 8rem 7.5rem 8rem;
+    text-align: center;
 }
 
 .samarbejd-block-3 .block-2-title {
     color: #fff;
 }
 
+.samarbejd-block-3 .omos-section {
+    align-items: center;
+}
 
+.samarbejd-block-3 .omos-description {
+    text-align: center;
+    margin: 0 auto;
+}
 
 .samarbejd-block-3 .omos-description p {
     color: #fff;
+    text-align: center;
 }
 
 .samarbejd-block-4 {
@@ -1684,6 +1871,11 @@ h2.tilmelding-column-title {
 
 .faq-page header nav a {
     color: #fff;
+}
+
+.faq-page header nav .nav-button {
+    background-color: #fff;
+    color: #1A1A1A;
 }
 
 .faq-block-1 {
@@ -1928,6 +2120,9 @@ h2.tilmelding-column-title {
         position: static;
         transform: none;
         margin-top: 2rem;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     /* Hide decorative elements on mobile */
@@ -1943,6 +2138,10 @@ h2.tilmelding-column-title {
     }
 
     /* Images in block 1 */
+    .brain-image {
+        display: none;
+    }
+
     .gemini-image,
     .gemini-container {
         position: static !important;
@@ -2169,27 +2368,82 @@ h2.tilmelding-column-title {
         height: auto;
     }
 
+    /* K1 & K2: images before content, use order to push below */
+    .program-page .horizontal-scroll-container .block-2:not(.program-intro-block),
+    .program-page .horizontal-scroll-container .block-3 {
+        flex-direction: column;
+    }
+
+    .program-page .horizontal-scroll-container .block-2:not(.program-intro-block) .block-2-content,
+    .program-page .horizontal-scroll-container .block-3 .block-2-content {
+        order: -1;
+    }
+
+    .program-page .horizontal-scroll-container .block-3 .penge-image {
+        display: none !important;
+    }
+
+    .program-page .horizontal-scroll-container .block-2 .penge-image {
+        display: block !important;
+        position: static !important;
+        max-width: 100%;
+        max-height: 300px;
+        margin-top: 1rem;
+        margin-left: auto;
+        margin-right: auto;
+        transform: none;
+        filter: grayscale(100%) contrast(1.1);
+    }
+
+    .program-page .horizontal-scroll-container .block-2:not(.program-intro-block) {
+        position: relative;
+        overflow: hidden;
+        align-items: center;
+    }
+
+    .program-page .horizontal-scroll-container .block-2 .seddel-image {
+        display: none !important;
+    }
+
     .program-page .block-3 .larry-image {
         position: static !important;
         max-width: 100%;
-        max-height: 350px;
-        margin-top: 2rem;
+        max-height: 300px;
+        margin-top: 1rem;
     }
 
+    /* K3 & K4: images already after content */
     .program-page .block-4 .globus-image {
         position: static !important;
         max-width: 100%;
-        max-height: 350px;
+        max-height: 300px;
         transform: none;
-        margin-top: 2rem;
+        margin-top: -2rem;
     }
 
-    .program-page .kongekrone-image {
+    .program-page .block-4 .kongekrone-image {
         position: static !important;
         max-width: 100%;
         max-height: 350px;
-        transform: none;
-        margin-top: 2rem;
+        transform: none !important;
+        margin-top: -3rem;
+        margin-bottom: -3rem;
+    }
+
+    .program-page .horizontal-scroll-container .block-4 {
+        flex-direction: column;
+    }
+
+    .scroll-top-arrow {
+        display: none;
+    }
+
+    .program-page .program-footer {
+        display: block;
+    }
+
+    .program-page .program-footer .footer-section h4 {
+        color: #F35D8D;
     }
 
     .program-page .block-2 .block-2-content,
@@ -2206,16 +2460,77 @@ h2.tilmelding-column-title {
         display: none;
     }
 
+    /* Alternating block colors on mobile */
+    .program-page .program-intro-block {
+        background-color: #1A1A1A;
+        color: #fff;
+    }
+    .program-page .program-intro-block .block-2-title,
+    .program-page .program-intro-block .block-2-description p {
+        color: #fff;
+    }
+
+    .program-page .horizontal-scroll-container .block-2:not(.program-intro-block) {
+        background-color: #E9E4DE;
+        color: #1A1A1A;
+    }
+    .program-page .horizontal-scroll-container .block-2:not(.program-intro-block) .block-2-title,
+    .program-page .horizontal-scroll-container .block-2:not(.program-intro-block) .block-2-description p {
+        color: #1A1A1A;
+    }
+
+    .program-page .horizontal-scroll-container .block-3 {
+        background-color: #1A1A1A;
+        color: #fff;
+    }
+    .program-page .horizontal-scroll-container .block-3 .block-2-title,
+    .program-page .horizontal-scroll-container .block-3 .block-2-description p {
+        color: #fff;
+    }
+
+    .program-page .horizontal-scroll-container .block-4:not(.program-block-4b) {
+        background-color: #E9E4DE;
+        color: #1A1A1A;
+    }
+    .program-page .horizontal-scroll-container .block-4:not(.program-block-4b) .block-4-title,
+    .program-page .horizontal-scroll-container .block-4:not(.program-block-4b) .block-4-description p {
+        color: #1A1A1A;
+    }
+
+    .program-page .program-block-4b {
+        background-color: #1A1A1A;
+        color: #fff;
+    }
+    .program-page .program-block-4b .block-4-title,
+    .program-page .program-block-4b .block-4-description p {
+        color: #fff;
+    }
+
+    .program-page .program-block-5 {
+        background-color: #E9E4DE;
+        color: #1A1A1A;
+    }
+    .program-page .program-block-5 .block-5-title,
+    .program-page .program-block-5 .block-5-description p {
+        color: #1A1A1A;
+    }
+    .program-page .program-block-5 .cta-button {
+        background-color: #1A1A1A;
+        color: #fff;
+    }
+
     .program-intro-block {
         flex-direction: column;
     }
 
-    .program-intro-block .block-2-description {
+    .program-page .program-intro-block .block-2-description {
         max-width: 100%;
+        margin-top: 2.5rem;
     }
 
     .teacher-grid {
         flex-direction: column;
+        margin-top: -2rem;
     }
 
     .program-page .block-4 .block-4-description {
@@ -2306,6 +2621,20 @@ h2.tilmelding-column-title {
         margin-left: 0;
     }
 
+    .omos-page .marie-image {
+        position: static !important;
+        max-width: 90% !important;
+        max-height: 410px !important;
+        margin: 1rem auto 0 1rem !important;
+        display: block !important;
+        left: auto !important;
+        right: auto !important;
+        top: auto !important;
+        align-self: center;
+        transform: none !important;
+        float: none !important;
+    }
+
     .omos-block-2,
     .omos-block-3 {
         padding: 3rem 1.5rem;
@@ -2324,6 +2653,27 @@ h2.tilmelding-column-title {
 
     .omos-block-3 .omos-section {
         width: auto;
+        align-items: center;
+    }
+
+    .omos-block-3 {
+        align-items: center;
+    }
+
+    .omos-block-3 .omos-content {
+        align-items: center;
+    }
+
+    .omos-block-3 .omos-description {
+        text-align: center;
+    }
+
+    .omos-block-3 .omos-description p {
+        text-align: center;
+    }
+
+    .omos-block-3 .omos-link {
+        align-self: center;
     }
 
     .omos-section {
@@ -2351,10 +2701,11 @@ h2.tilmelding-column-title {
     .faq-image {
         position: static !important;
         max-width: 100%;
-        max-height: 350px;
+        max-height: 443px;
         top: auto;
         transform: none;
-        margin-top: 2rem;
+        margin-top: 0;
+        margin-bottom: -1rem;
     }
 
     .faq-block-2 {
@@ -2391,6 +2742,15 @@ h2.tilmelding-column-title {
     /* Samarbejd Page */
     .samarbejd-block-1 {
         height: auto;
+    }
+
+    .haender-image {
+        position: static !important;
+        max-width: 80%;
+        max-height: 300px;
+        transform: none;
+        margin: 1rem auto;
+        display: block;
     }
 
     .samarbejd-title {
@@ -2710,6 +3070,10 @@ h2.tilmelding-column-title {
 }
 
 /* Program page - Green */
+.samarbejd-page .footer-section h4 {
+    color: #F35D8D;
+}
+
 .program-page .footer-section h4 {
     color: #4ADE80;
 }
@@ -2739,8 +3103,8 @@ h2.tilmelding-column-title {
     position: absolute;
     right: 10rem;
     top: 40%;
-    max-width: 320px;
-    max-height: 320px;
+    max-width: 410px;
+    max-height: 410px;
     filter: grayscale(100%) contrast(1.1);
     z-index: 1;
 }
@@ -2750,9 +3114,9 @@ h2.tilmelding-column-title {
     position: absolute;
     right: 4rem;
     top: 20%;
-    max-width: 500px;
-    max-height: 500px;
-    filter: grayscale(100%) contrast(1.1);
+    max-width: 650px;
+    max-height: 650px;
+    filter: grayscale(100%) contrast(1.1) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='3' result='noise'/%3E%3CfeColorMatrix in='noise' type='saturate' values='0' result='monoNoise'/%3E%3CfeBlend in='SourceGraphic' in2='monoNoise' mode='multiply' result='blend'/%3E%3CfeComposite in='blend' in2='SourceGraphic' operator='in'/%3E%3C/filter%3E%3C/svg%3E#grain");
     z-index: 0;
     transform: rotate(-30deg);
 }
@@ -2782,5 +3146,5 @@ h2.tilmelding-column-title {
 }
 
 .index-page .block-3-hvor .program-link:hover {
-    background-color: #fff;
+    background-color: #ddd;
 }
