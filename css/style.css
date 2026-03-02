@@ -1863,6 +1863,11 @@ h2.tilmelding-column-title {
     color: #fff;
 }
 
+.samarbejd-contact-form .form-group input:focus,
+.samarbejd-contact-form .form-group textarea:focus {
+    border-color: #F35D8D;
+}
+
 /* FAQ Page Styles */
 .faq-page header {
     background-color: #1A1A1A;
@@ -2071,13 +2076,13 @@ h2.tilmelding-column-title {
     }
 
     header nav {
-        gap: 1.5rem;
-        flex-wrap: wrap;
+        gap: 0.8rem;
+        flex-wrap: nowrap;
         justify-content: center;
     }
 
     header nav a {
-        font-size: 0.75rem;
+        font-size: 0.6rem;
     }
 
     /* Blocks - General */
